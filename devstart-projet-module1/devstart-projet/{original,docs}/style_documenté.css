@@ -1,0 +1,302 @@
+* {
+  margin: 0;   /* fonctionne comme un reset pour supprimer les marges par défaut de tous les éléments */
+  padding: 0;  /* fonctionne comme un reset pour supprimer les espacements internes par défaut de tous les éléments */
+}
+
+body {
+  font-family: Arial;  /* définit la police de caractères principale du site */
+  color: #333;         /* définit la couleur du texte en gris foncé pour tout le site */
+}
+
+
+
+.b1 {
+  background: #1a1a2e;          /*fonction qui définit la couleur de fond bleu marine foncé pour la nav */
+  padding: 18px 60px;           /* fonction qui définit l'espacement interne : 18px en haut/bas, 60px à gauche/droite */
+  display: flex;                /* fonction qui active le mode flexbox pour aligner les éléments en ligne */
+  justify-content: space-between; /*fonction qui écarte le logo et les liens aux deux extrémités */
+  align-items: center;          /* fonction qui centre les éléments verticalement dans la nav */
+}
+
+.b1a {
+  color: white;       /* fonction qui définit la Couleur du texte du logo en blanc */
+  font-size: 22px;    /* fonction qui définit la taille de la police du logo */
+  font-weight: bold;  /* fonction qui met le texte du logo en gras */
+}
+
+.b1b a {
+  color: #ccc;             /* fonction qui définit la couleur des liens de navigation en gris clair */
+  text-decoration: none;   /* fonction qui supprime le soulignement des liens */
+  margin-left: 25px;       /* fonnction qui ajoute un espace de 25px à gauche de chaque lien */
+  font-size: 14px;         /* fonction qui définit la taille de la police des liens de navigation */
+}
+
+.b1b a:hover {
+  color: white;  /* fonction qui Change la couleur des liens en blanc lors du survol */
+}
+
+
+
+.c {
+  display: flex;        /* fonction qui active flexbox pour placer le texte et l'image côte à côte */
+  align-items: center;  /* fonction qui aligne verticalement le texte et l'image au centre */
+  padding: 80px 60px;   /* fonction qui définit l'espacement interne : 80px haut/bas, 60px gauche/droite */
+  background: #f9f9f9;  /* fonction qui définit le fond gris très clair pour la section héro */
+  gap: 40px;            /* fonction spécifiant l'espace de 40px entre le bloc texte et l'image */
+}
+
+.c1 {
+  flex: 1;  /*Permete au bloc texte de prendre autant d'espace disponible que l'image */
+}
+
+.c1a {
+  font-size: 38px;    /* La Grande taille de police pour le titre principal */
+  font-weight: bold;  /* Le Titre en gras */
+  color: #1a1a2e;     /* La couleur bleu marine foncé pour le titre */
+  line-height: 1.3;   /* La hauteur de ligne pour espacer les lignes du titre */
+  margin-bottom: 20px; /* L'espace de 20px sous le titre */
+}
+
+.c1b {
+  font-size: 16px;     /* La taille de la police du paragraphe descriptif */
+  color: #555;         /* La couleur gris moyen pour le texte descriptif */
+  line-height: 1.7;    /* L'interligne  pour une meilleure lisibilité */
+  margin-bottom: 30px; /* L'espace de 30px entre le texte et le bouton */
+}
+
+.c1c a {
+  background: #e94560;    /* Le fond rouge/rose pour le bouton d'appel à l'action */
+  color: white;           /* Couleur du texte blanc sur le bouton */
+  padding: 14px 32px;     /* Fonction qui définit l'espacement interne du bouton : 14px haut/bas, 32px gauche/droite */
+  border-radius: 6px;     /* Fonction qui définit les coins légèrement arrondis pour le bouton */
+  text-decoration: none;  /* Fonction qui supprime le soulignement du lien-bouton */
+  font-weight: bold;      /* Le texte du bouton en gras */
+}
+
+.c2 img {
+  width: 100%;        /* fonction qui définit la largeur qu'occupe l'image de son conteneur */
+  max-width: 480px;   /* fonction qui limite la largeur maximale de l'image à 480px */
+  border-radius: 12px; /* fonction qui définit les coins arrondis pour l'image héro */
+}
+
+
+
+.d {
+  padding: 70px 60px;  /* Espacement interne de la section services */
+  background: white;   /* Fond blanc pour la section services */
+}
+
+.d0 {
+  font-size: 28px;      /* Taille du titre de section */
+  font-weight: bold;    /* Titre de section en gras */
+  text-align: center;   /* Centre le titre horizontalement */
+  margin-bottom: 40px;  /* Espace de 40px entre le titre et les cartes */
+  color: #1a1a2e;       /* Couleur bleu marine foncé pour le titre */
+}
+
+.dd {
+  display: flex;  /* Aligne les 4 cartes de services côte à côte */
+  gap: 24px;      /* Espace de 24px entre chaque carte de service */
+}
+
+.d1, .d2, .d3, .d4 {
+  flex: 1;                 /* Chaque carte prend une part égale de l'espace disponible */
+  background: #f4f4f4;     /* Fond gris clair pour les cartes */
+  padding: 28px 22px;      /* Espacement interne des cartes */
+  border-radius: 10px;     /* Coins arrondis pour les cartes */
+  text-align: center;      /* Centre le contenu de chaque carte */
+}
+
+.d1i, .d2i, .d3i, .d4i {
+  font-size: 36px;    /* Grande taille pour les icônes/émojis des services */
+  margin-bottom: 14px; /* Espace sous les icônes */
+}
+
+.d1t, .d2t, .d3t, .d4t {
+  font-size: 17px;     /* Taille du titre de chaque carte de service */
+  font-weight: bold;   /* Titre de carte en gras */
+  color: #1a1a2e;      /* Couleur bleu marine foncé pour les titres */
+  margin-bottom: 10px; /* Espace sous le titre avant le texte descriptif */
+}
+
+.d1p, .d2p, .d3p, .d4p {
+  font-size: 14px;  /* Petite taille pour les textes descriptifs des services */
+  color: #666;      /* Couleur gris moyen pour les descriptions */
+  line-height: 1.6; /* Interligne pour la lisibilité des descriptions */
+}
+
+
+.e {
+  display: flex;        /* Place l'image et le texte côte à côte */
+  padding: 70px 60px;   /* Espacement interne de la section */
+  background: #f0f0f5;  /* Fond gris légèrement bleuté */
+  gap: 50px;            /* Grand espace entre l'image et le texte */
+  align-items: center;  /* Aligne verticalement l'image et le texte au centre */
+}
+
+.e1 {
+  flex: 1;  /* Le bloc image prend autant d'espace que le bloc texte */
+}
+
+.eimg {
+  width: 100%;        /* L'image occupe toute la largeur de son conteneur */
+  border-radius: 12px; /* Coins arrondis pour l'image "À propos" */
+}
+
+.e2 {
+  flex: 1;  /* Le bloc texte prend autant d'espace que le bloc image */
+}
+
+.e2t {
+  font-size: 28px;     /* Taille du titre de la section "À propos" */
+  font-weight: bold;   /* Titre en gras */
+  color: #1a1a2e;      /* Couleur bleu marine foncé */
+  margin-bottom: 18px; /* Espace sous le titre */
+}
+
+.e2p {
+  font-size: 15px;     /* Taille des paragraphes de la section "À propos" */
+  color: #555;         /* Couleur gris moyen pour le texte */
+  line-height: 1.7;    /* Interligne généreux pour la lisibilité */
+  margin-bottom: 14px; /* Espace entre les paragraphes */
+}
+
+.e2b a {
+  display: inline-block; /* Permet d'appliquer padding sur un lien */
+  margin-top: 10px;      /* Espace au-dessus du bouton */
+  background: #1a1a2e;   /* Fond bleu marine foncé pour le bouton */
+  color: white;          /* Texte blanc sur le bouton */
+  padding: 12px 26px;    /* Espacement interne du bouton */
+  border-radius: 6px;    /* Coins légèrement arrondis */
+  text-decoration: none; /* Supprime le soulignement du lien-bouton */
+  font-weight: bold;     /* Texte du bouton en gras */
+}
+
+
+
+.f {
+  padding: 70px 60px;  /* Espacement interne de la section témoignages */
+  background: #1a1a2e; /* Fond bleu marine foncé (contraste avec les autres sections) */
+}
+
+.f0 {
+  font-size: 28px;     /* Taille du titre de la section témoignages */
+  font-weight: bold;   /* Titre en gras */
+  color: white;        /* Titre en blanc sur fond sombre */
+  text-align: center;  /* Centre le titre */
+  margin-bottom: 40px; /* Espace sous le titre avant les témoignages */
+}
+
+.ff {
+  display: flex;  /* Aligne les 3 témoignages côte à côte */
+  gap: 24px;      /* Espace de 24px entre chaque carte témoignage */
+}
+
+.f1, .f2, .f3 {
+  flex: 1;                      /* Chaque témoignage prend une part égale */
+  background: #16213e;          /* Fond légèrement plus clair que le fond de section */
+  padding: 28px;                /* Espacement interne des cartes témoignage */
+  border-radius: 10px;          /* Coins arrondis pour les cartes */
+  border-left: 4px solid #e94560; /* Bordure rouge/rose sur le côté gauche pour la déco */
+}
+
+.f1t, .f2t, .f3t {
+  font-size: 14px;     /* Petite taille pour le texte du témoignage */
+  color: #ccc;         /* Couleur gris clair pour le texte sur fond sombre */
+  line-height: 1.7;    /* Interligne pour la lisibilité */
+  font-style: italic;  /* Texte en italique pour marquer la citation */
+  margin-bottom: 16px; /* Espace entre la citation et le nom de l'auteur */
+}
+
+.f1n, .f2n, .f3n {
+  font-size: 13px;   /* Petite taille pour le nom de l'auteur */
+  color: #e94560;    /* Couleur rouge/rose pour mettre le nom en valeur */
+  font-weight: bold; /* Nom en gras */
+}
+
+
+.g {
+  padding: 70px 60px;  /* Espacement interne de la section contact */
+  background: #f9f9f9; /* Fond gris très clair */
+}
+
+.g0 {
+  font-size: 28px;     /* Taille du titre de la section contact */
+  font-weight: bold;   /* Titre en gras */
+  color: #1a1a2e;      /* Couleur bleu marine foncé */
+  text-align: center;  /* Centre le titre */
+  margin-bottom: 36px; /* Espace sous le titre avant le formulaire */
+}
+
+.gf {
+  max-width: 600px;      /* Largeur maximale du formulaire de contact */
+  margin: 0 auto;        /* Centre le formulaire horizontalement dans la page */
+  display: flex;         /* Active flexbox pour empiler les champs verticalement */
+  flex-direction: column; /* Empile les éléments du formulaire en colonne */
+  gap: 16px;             /* Espace de 16px entre chaque champ du formulaire */
+}
+
+.gi {
+  padding: 14px 16px;            /* Espacement interne des champs texte */
+  border: 1px solid #ddd;        /* Bordure gris clair autour des champs */
+  border-radius: 6px;            /* Coins légèrement arrondis pour les champs */
+  font-size: 14px;               /* Taille de la police dans les champs */
+  outline: none;                 /* Supprime le contour bleu par défaut au focus */
+}
+
+.gt {
+  padding: 14px 16px;            /* Espacement interne de la zone de texte */
+  border: 1px solid #ddd;        /* Bordure gris clair */
+  border-radius: 6px;            /* Coins légèrement arrondis */
+  font-size: 14px;               /* Taille de la police */
+  height: 140px;                 /* Hauteur fixe de la zone de message */
+  resize: vertical;              /* Autorise uniquement le redimensionnement vertical */
+  outline: none;                 /* Supprime le contour par défaut au focus */
+}
+
+.gb {
+  background: #e94560;  /* Fond rouge/rose pour le bouton d'envoi */
+  color: white;         /* Texte blanc sur le bouton */
+  border: none;         /* Supprime la bordure par défaut du bouton */
+  padding: 14px;        /* Espacement interne du bouton */
+  border-radius: 6px;   /* Coins légèrement arrondis */
+  font-size: 15px;      /* Taille de la police du bouton */
+  font-weight: bold;    /* Texte du bouton en gras */
+  cursor: pointer;      /* Change le curseur en main au survol du bouton */
+}
+
+.gb:hover {
+  background: #c73652;  /* Couleur plus sombre au survol pour l'effet de clic */
+}
+
+
+
+.h {
+  background: #0f0f1a;            /* Fond très sombre (plus foncé que la nav) */
+  padding: 30px 60px;             /* Espacement interne du footer */
+  display: flex;                  /* Aligne les 3 blocs du footer en ligne */
+  justify-content: space-between; /* Répartit les blocs aux extrémités et au centre */
+  align-items: center;            /* Centre verticalement le contenu du footer */
+}
+
+.h1 {
+  color: #aaa;     /* Couleur gris moyen pour le texte de copyright */
+  font-size: 13px; /* Petite taille pour le texte du footer */
+}
+
+
+.h2 a {dc 
+  color: #aaa;             /* Couleur gris moyen pour les liens du footer */
+  text-decoration: none;   /* Supprime le soulignement des liens */
+  margin-left: 18px;       /* Espace à gauche de chaque lien */
+  font-size: 13px;         /* Petite taille pour les liens du footer */
+}
+
+.h2 a:hover {
+  color: white;  /* Liens en blanc au survol */
+}
+
+.h3 {
+  color: #aaa;     /* Couleur gris moyen pour l'élément de droite du footer */
+  font-size: 13px; /* Petite taille */
+}
