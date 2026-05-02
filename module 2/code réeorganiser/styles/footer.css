@@ -1,0 +1,28 @@
+h {
+  background: #0f0f1a;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h1 {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.h2 a {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 13px;
+}
+
+.h2 a:hover {
+  color: white;
+}
+
+.h3 {
+  color: #aaa;
+  font-size: 13px;
+}

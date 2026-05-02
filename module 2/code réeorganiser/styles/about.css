@@ -1,0 +1,45 @@
+.e {
+  display: flex;
+  padding: 70px 60px;
+  background: #f0f0f5;
+  gap: 50px;
+  align-items: center;
+}
+
+.e1 {
+  flex: 1;
+}
+
+.eimg {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.e2 {
+  flex: 1;
+}
+
+.e2t {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 18px;
+}
+
+.e2p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.e2b a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #1a1a2e;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}

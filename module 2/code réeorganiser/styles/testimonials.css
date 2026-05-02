@@ -1,0 +1,39 @@
+.f {
+  padding: 70px 60px;
+  background: #1a1a2e;
+}
+
+.f0 {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ff {
+  display: flex;
+  gap: 24px;
+}
+
+.f1, .f2, .f3 {
+  flex: 1;
+  background: #16213e;
+  padding: 28px;
+  border-radius: 10px;
+  border-left: 4px solid #e94560;
+}
+
+.f1t, .f2t, .f3t {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.f1n, .f2n, .f3n {
+  font-size: 13px;
+  color: #e94560;
+  font-weight: bold;
+}
