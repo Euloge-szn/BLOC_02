@@ -1,0 +1,24 @@
+b1 {
+  background: #1a1a2e;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.b1a {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.b1b a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
+}
+
+.b1b a:hover {
+  color: white;
+}
