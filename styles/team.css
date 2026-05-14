@@ -1,0 +1,157 @@
+/* ════════════════════════════
+   SECTION ÉQUIPE & PARTENAIRES
+   team.css
+   Dépend de : base.css (variables et animation fadeUp)
+════════════════════════════ */
+
+
+/* ── Conteneur principal de la section ── */
+#team {
+  background: var(--black); /* Retour au noir profond comme #services */
+  padding: 100px 6vw;
+}
+
+
+/* ── Layout 2 colonnes côte à côte (Flexbox obligatoire) ── */
+.team-layout {
+  display: flex; /* Équipe à gauche, Partenaires à droite */
+  gap: 32px;
+  flex-wrap: wrap; /* Passe en colonne unique sur mobile */
+  align-items: start;
+}
+
+
+/* ── Style commun aux deux blocs ── */
+.team-block,
+.partners-block {
+  flex: 1 1 300px; /* Taille minimale 300px, s'étire équitablement */
+  background: var(--dark2);
+  border: 1px solid var(--gray);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+
+/* ── Titres des blocs ── */
+.team-block h3,
+.partners-block h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+
+/* ── Textes d'introduction des blocs ── */
+.team-block p,
+.partners-block p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.75;
+  font-weight: 400;                /* Épaisseur augmentée pour la lisibilité */
+  margin-bottom: 32px;
+}
+
+
+/* ════ BLOC ÉQUIPE ════ */
+
+/* ── Rangée d'avatars superposés ── */
+.team-avatars {
+  display: flex; /* Alignement horizontal */
+  margin-bottom: 20px;
+}
+
+/* ── Avatar individuel (initiales d'un membre) ── */
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%; /* Cercle parfait */
+  border: 2px solid var(--dark2); /* Séparation visuelle entre avatars superposés */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-right: -10px; /* Superposition des avatars */
+  transition: transform .2s;
+}
+
+/* L'avatar survolé se détache vers l'avant */
+.avatar:hover {
+  transform: scale(1.12);
+  z-index: 2;
+}
+
+/* Dégradés bleus différents par avatar pour les distinguer */
+.av1 { background: linear-gradient(135deg, #1d4ed8, #3b82f6); }
+.av2 { background: linear-gradient(135deg, #1e3a5f, #2563eb); }
+.av3 { background: linear-gradient(135deg, #0f2d5c, #1d4ed8); }
+.av4 { background: linear-gradient(135deg, #172554, #3b82f6); }
+.av-more {
+  background: var(--gray2); /* Gris neutre pour le "+46" */
+  font-size: 11px;
+  color: var(--muted);
+}
+
+
+/* ── Tags des rôles de l'équipe ── */
+.team-roles {
+  display: flex;
+  flex-wrap: wrap; /* Retour à la ligne si trop de tags */
+  gap: 8px;
+}
+
+.role-tag {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue3);
+  background: rgba(59, 130, 246, .1);  /* Bleu très transparent */
+  border: 1px solid rgba(59, 130, 246, .25);
+  border-radius: 6px;
+  padding: 5px 12px;
+}
+
+
+/* ════ BLOC PARTENAIRES ════ */
+
+/* ── Grille des logos partenaires (Flexbox obligatoire) ── */
+.logos-grid {
+  display: flex;                  /* Aligne les logos horizontalement */
+  flex-wrap: wrap;                /* Retour à la ligne automatique */
+  gap: 12px;
+}
+
+/* ── Logo individuel d'un partenaire ── */
+.partner-logo {
+  flex: 1 1 120px; /* Taille minimale 120px */
+  height: 56px;
+  background: var(--gray);
+  border: 1px solid var(--gray2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  filter: grayscale(1); /* Noir et blanc par défaut (sobre et professionnel) */
+  opacity: .55;
+  transition: all .3s;
+  cursor: default;
+}
+
+/* Au survol : retrouve ses couleurs et une bordure bleue */
+.partner-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  border-color: var(--blue2);
+  color: var(--blue3);
+  background: rgba(37, 99, 235, .08);
+}
