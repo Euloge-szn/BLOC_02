@@ -1,0 +1,140 @@
+/* ============================================================
+   NexaLab — contact.css  ★ AMÉLIORÉ
+   Split layout · Inputs focus premium · Button gradient
+   ============================================================ */
+
+.contact-section {
+  background: var(--color-bg);
+  padding: var(--space-3xl) 0;
+  position: relative; overflow: clip;
+}
+.contact-section::before {
+  content: '';
+  position: absolute; bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(59,119,223,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-p);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xl);
+  align-items: flex-start;
+  position: relative; z-index: 1;
+}
+
+/* ── Colonne info ── */
+.contact-info { flex: 1; min-width: 240px; }
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700; color: var(--color-text);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--space-xl);
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-sm);
+  border-left: 2px solid var(--color-border);
+  transition: border-color var(--t-base);
+}
+.contact-detail:hover { border-left-color: var(--color-primary); }
+
+.contact-detail h3 {
+  font-size: 0.95rem; font-weight: 600;
+  color: var(--color-text);
+}
+.contact-detail p {
+  color: var(--color-muted);
+  font-size: 0.875rem; line-height: 1.6; margin: 0;
+}
+
+/* ── Colonne formulaire ── */
+.contact-form { flex: 1.2; min-width: 280px; }
+
+.contact-form h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700; color: var(--color-text);
+  letter-spacing: -0.3px;
+  margin-bottom: var(--space-lg);
+}
+
+.form-group { margin-bottom: var(--space-md); position: relative; }
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-light);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  resize: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary);
+  background: rgba(59,119,223,0.04);
+  box-shadow: 0 0 0 3px rgba(59,119,223,0.12);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-muted); opacity: 0.55; font-size: 0.875rem;
+}
+.form-group input:hover:not(:focus),
+.form-group textarea:hover:not(:focus) {
+  border-color: var(--color-border-l);
+}
+
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 100%);
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 18px rgba(59,119,223,0.3);
+  letter-spacing: 0.2px;
+}
+.contact-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(59,119,223,0.45);
+  opacity: 0.95;
+}
+.contact-submit:active { transform: translateY(0); }
+
+@media (max-width: 768px) {
+  .contact-container { flex-direction: column; gap: var(--space-xl); }
+}

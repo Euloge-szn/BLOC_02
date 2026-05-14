@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NexaLab — Laboratoire d'innovation technologique africain. IA, data et IoT au service des entreprises africaines.">
+  <meta name="author" content="NexaLab">
+  <title>NexaLab — Innovation Technologique pour l'Afrique</title>
+
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/about.css">
+  <link rel="stylesheet" href="styles/services.css">
+  <link rel="stylesheet" href="styles/stats.css">
+  <link rel="stylesheet" href="styles/team.css">
+  <link rel="stylesheet" href="styles/team-membres.css">
+  <link rel="stylesheet" href="styles/temoignages.css">
+  <link rel="stylesheet" href="styles/contact.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="#" class="header__logo" aria-label="NexaLab — Accueil">
+        <span class="header__logo-hex">
+          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="none" stroke="#3b77df" stroke-width="2"/>
+            <polygon points="20,8 31,14 31,26 20,32 9,26 9,14" fill="none" stroke="#3b77df" stroke-width="1.2" opacity="0.5"/>
+            <circle cx="20" cy="14" r="2" fill="#3b77df"/>
+            <circle cx="14" cy="24" r="2" fill="#3b77df"/>
+            <circle cx="26" cy="24" r="2" fill="#3b77df"/>
+            <line x1="20" y1="14" x2="14" y2="24" stroke="#3b77df" stroke-width="1" opacity="0.6"/>
+            <line x1="20" y1="14" x2="26" y2="24" stroke="#3b77df" stroke-width="1" opacity="0.6"/>
+            <line x1="14" y1="24" x2="26" y2="24" stroke="#3b77df" stroke-width="1" opacity="0.6"/>
+          </svg>
+        </span>
+        <span class="header__logo-text">Nexa<span>Lab</span></span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav__toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav__toggle-label" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="#hero"        class="nav__link nav__link--active">Accueil</a></li>
+          <li><a href="#about"       class="nav__link">À propos</a></li>
+          <li><a href="#services"    class="nav__link">Services</a></li>
+          <li><a href="#team"        class="nav__link">Équipe</a></li>
+          <li><a href="#temoignages" class="nav__link">Témoignages</a></li>
+          <li><a href="#contact"     class="nav__link">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav__cta">Prendre rendez-vous</a>
+      </nav>
+      <label for="nav-toggle" class="nav__overlay" aria-hidden="true"></label>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <div class="hero__badge">INNOVATION &bull; IA &bull; DATA &bull; IOT</div>
+          <h1 class="hero__title">
+            L'innovation technologique<br>au service de
+            <span class="hero__title-highlight"> l'Afrique.</span>
+          </h1>
+          <p class="hero__subtitle">
+            Nous accompagnons les entreprises africaines avec des solutions
+            intelligentes, fiables et conçues pour un impact réel.
+          </p>
+          <div class="hero__actions">
+            <a href="#services" class="hero__cta">Découvrir nos services <span class="hero__cta-arrow">→</span></a>
+            <a href="#contact" class="hero__cta-secondary">Nous contacter</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img src="assets/hero-africa.png" alt="Carte holographique de l'Afrique — IA, Data, IoT" class="hero__image">
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <div class="hero__scroll-mouse"></div>
+        <span class="hero__scroll-arrow">⌄</span>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="about" id="about">
+      <div class="about__inner container">
+        <div class="about__text">
+          <span class="about__label">Notre Mission</span>
+          <h2 class="about__title">Qui sommes-nous ?</h2>
+          <p class="about__description">NexaLab est un laboratoire d'innovation technologique africain spécialisé en intelligence artificielle, data et IoT.</p>
+          <p class="about__description">Nous aidons les entreprises à moderniser leurs opérations grâce à des solutions fiables, performantes et adaptées aux réalités africaines.</p>
+          <p class="about__description">Notre mission : transformer la technologie en levier concret de croissance et d'impact.</p>
+        </div>
+        <div class="about__visual">
+          <img src="assets/about-team.png" alt="Équipe NexaLab" class="about__image">
+        </div>
+      </div>
+      <div class="about__values container">
+        <article class="about__value-card">
+          <div class="about__value-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="32" height="24" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="8" y1="28" x2="40" y2="28"/><circle cx="24" cy="22" r="6"/>
+              <path d="M24 16 L24 22 L28 22"/><line x1="20" y1="36" x2="28" y2="36"/><line x1="24" y1="32" x2="24" y2="36"/>
+            </svg>
+          </div>
+          <h3 class="about__value-title">Modernité</h3>
+          <p class="about__value-desc">Des solutions conçues avec les technologies les plus récentes.</p>
+        </article>
+        <article class="about__value-card">
+          <div class="about__value-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4 L24 12" stroke-linecap="round"/>
+              <path d="M24 12 C24 12 12 16 12 26 C12 36 24 44 24 44 C24 44 36 36 36 26 C36 16 24 12 24 12Z"/>
+              <polyline points="18,26 22,30 30,22" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="about__value-title">Rigueur</h3>
+          <p class="about__value-desc">Une approche méthodique axée sur la fiabilité et la qualité.</p>
+        </article>
+        <article class="about__value-card">
+          <div class="about__value-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="28,10 38,10 38,20" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="38" y1="10" x2="26" y2="22" stroke-linecap="round"/>
+              <polyline points="8,40 16,28 22,32 30,20" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="about__value-title">Impact</h3>
+          <p class="about__value-desc">Des innovations pensées pour produire des résultats concrets.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <p class="section-label">Nos expertises</p>
+        <h2 class="section-title">Des solutions <span>taillées</span> pour l'Afrique</h2>
+        <p class="section-sub">Nous combinons IA, données et connectivité pour transformer les défis africains en opportunités concrètes.</p>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.5 2a4.5 4.5 0 0 1 4.5 4.5v.5h.5a3.5 3.5 0 0 1 0 7H9.5A4.5 4.5 0 0 1 9.5 2z"/>
+                <path d="M14 9.5V14m-4.5-5v5M7 14h10"/><circle cx="9.5" cy="17" r="1"/><circle cx="14.5" cy="17" r="1"/>
+                <path d="M9.5 18v2m5-2v2"/>
+              </svg>
+            </div>
+            <h3>Intelligence Artificielle</h3>
+            <p>Nos modèles apprennent, anticipent et transforment vos données en décisions stratégiques gagnantes.</p>
+            <span class="card-tag">IA &amp; ML</span>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="2"/>
+                <path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7"/>
+                <path d="M5 5a9.9 9.9 0 0 0 0 14M19 5a9.9 9.9 0 0 1 0 14"/>
+              </svg>
+            </div>
+            <h3>Internet des Objets (IoT)</h3>
+            <p>Connectez vos équipements et libérez le potentiel de vos infrastructures avec nos solutions intelligentes.</p>
+            <span class="card-tag">Connectivité</span>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/>
+                <rect x="17" y="3" width="4" height="18" rx="1"/><line x1="3" y1="22" x2="21" y2="22"/>
+              </svg>
+            </div>
+            <h3>Data &amp; Analytics</h3>
+            <p>Vos données sont un trésor. Nous les transformons en insights puissants pour un avantage compétitif immédiat.</p>
+            <span class="card-tag">Big Data</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- STATS -->
+    <section id="stats">
+      <div class="stats-header container">
+        <p class="section-label">En chiffres</p>
+        <h2 class="section-title">L'impact <span>NexaLab</span></h2>
+        <p class="section-sub">Des résultats concrets qui témoignent de notre engagement envers l'excellence technologique.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-number">+120</div><div class="stat-label">Projets réussis à travers le continent</div><div class="stat-divider"></div></div>
+        <div class="stat-item"><div class="stat-number">15</div><div class="stat-label">Pays connectés à nos solutions</div><div class="stat-divider"></div></div>
+        <div class="stat-item"><div class="stat-number">30</div><div class="stat-label">Entreprises leaders accompagnées</div><div class="stat-divider"></div></div>
+        <div class="stat-item"><div class="stat-number">50</div><div class="stat-label">Experts passionnés qui repoussent les limites</div><div class="stat-divider"></div></div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- ÉQUIPE AVATARS -->
+    <section id="team">
+      <div class="container">
+        <p class="section-label">Notre écosystème</p>
+        <h2 class="section-title">Les visages de <span>NexaLab</span></h2>
+        <p class="section-sub">Une équipe soudée et un réseau de partenaires stratégiques pour un impact maximal.</p>
+        <div class="team-layout">
+          <div class="team-block">
+            <h3>Une équipe visionnaire</h3>
+            <p>Chez NexaLab, nous réunissons des talents audacieux : ingénieurs, designers et stratèges qui partagent une obsession commune — créer de la technologie qui inspire confiance et génère de l'impact.</p>
+            <div class="team-avatars">
+              <div class="avatar av1">AM</div><div class="avatar av2">KD</div>
+              <div class="avatar av3">FO</div><div class="avatar av4">SB</div>
+              <div class="avatar av-more">+46</div>
+            </div>
+            <div class="team-roles">
+              <span class="role-tag">Ingénierie</span><span class="role-tag">Design</span>
+              <span class="role-tag">Data Science</span><span class="role-tag">Stratégie</span>
+              <span class="role-tag">DevOps</span>
+            </div>
+          </div>
+          <div class="partners-block">
+            <h3>Des partenaires stratégiques</h3>
+            <p>Nous collaborons avec les meilleurs incubateurs, universités et entreprises pour amplifier notre force et conquérir de nouveaux marchés.</p>
+            <div class="logos-grid">
+              <div class="partner-logo">TechHub</div><div class="partner-logo">DataCo</div>
+              <div class="partner-logo">InnoLab</div><div class="partner-logo">NexVentures</div>
+              <div class="partner-logo">AfriCloud</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- MEMBRES PHOTOS -->
+    <section id="team-membres">
+      <div class="team-wrapper">
+        <div class="team-photo-header"><h2>Notre équipe</h2></div>
+        <div class="team-container">
+          <figure><div class="shine"></div><img src="assets/I1.jpg" alt="Saston Cosinai"><figcaption>Saston Cosinai<br><b>Développeur</b></figcaption></figure>
+          <figure><div class="shine"></div><img src="assets/I (4).jpg" alt="Charlie Doe"><figcaption>Charlie Doe<br><b>Designer</b></figcaption></figure>
+          <figure><div class="shine"></div><img src="assets/I2.jpg" alt="John Smith"><figcaption>John Smith<br><b>Manager</b></figcaption></figure>
+          <figure><div class="shine"></div><img src="assets/I (3).jpg" alt="Diana Donoa"><figcaption>Diana Donoa<br><b>Marketing</b></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÉMOIGNAGES -->
+    <section id="temoignages" class="temoignages">
+      <div class="temoignages-header">
+        <h2>Témoignages</h2>
+        <p>Ce que nos clients disent de nous</p>
+      </div>
+      <div class="temoignages-grid">
+        <div class="temoignage-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p><i class="fas fa-quote-left quote-icon"></i>En tant que startup, nous avions besoin d'une équipe agile. Grâce à leur expertise, nous avons pu lancer notre plateforme 2 mois plus tôt que prévu. C'est un partenaire de confiance.</p>
+          <p class="auteur">— Marie Dupont, CEO TechStart</p>
+        </div>
+        <div class="temoignage-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p><i class="fas fa-quote-left quote-icon"></i>La transition s'est faite en douceur, sans interruption de service. L'automatisation mise en place a augmenté notre productivité de 28%. Excellent travail.</p>
+          <p class="auteur">— Thomas Lefevre, DSI LogiCorp</p>
+        </div>
+        <div class="temoignage-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p><i class="fas fa-quote-left quote-icon"></i>Une solution sur mesure, conforme RGPD, parfaitement intégrée à nos systèmes. L'équipe a fait preuve de grande rigueur et de réactivité face à nos enjeux critiques.</p>
+          <p class="auteur">— Diana Benali, Responsable Sécurité</p>
+        </div>
+        <div class="temoignage-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p><i class="fas fa-quote-left quote-icon"></i>Nos coûts opérationnels ont baissé de 35% en 6 mois. Le support est irréprochable et l'accompagnement exemplaire du début à la fin. Je recommande vivement.</p>
+          <p class="auteur">— Julien Moreau, Directeur Opérations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Contactez-nous</h2>
+          <div class="contact-detail"><h3>📬 Formulaire de contact</h3><p>Remplissez le formulaire ci-contre et nous vous répondrons dans les 24h.</p></div>
+          <div class="contact-detail"><h3>✉️ Email</h3><p>contact@nexalab.com</p></div>
+          <div class="contact-detail"><h3>📍 Localisation</h3><p>Afrique de l'Ouest — Présence dans 15 pays</p></div>
+        </div>
+        <div class="contact-form">
+          <h2>Envoyez un message</h2>
+          <form action="#" method="post">
+            <div class="form-group"><label for="name">Nom complet</label><input type="text" id="name" name="name" placeholder="Votre nom" required></div>
+            <div class="form-group"><label for="email">Adresse email</label><input type="email" id="email" name="email" placeholder="you@example.com" required></div>
+            <div class="form-group"><label for="sujet">Sujet</label><input type="text" id="sujet" name="sujet" placeholder="Objet de votre message"></div>
+            <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet..."></textarea></div>
+            <button type="submit" class="contact-submit">Envoyer <span>→</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h1>NexaLab</h1>
+        <p>Laboratoire d'innovation technologique africain. IA, Data et IoT pour les entreprises du continent.</p>
+      </div>
+      <div class="footer-links">
+        <div class="links-group">
+          <h3>À propos</h3>
+          <ul>
+            <li><a href="#about">Notre mission</a></li>
+            <li><a href="#team">Notre équipe</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="links-group">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#services">Intelligence Artificielle</a></li>
+            <li><a href="#services">IoT</a></li>
+            <li><a href="#services">Data Analytics</a></li>
+          </ul>
+        </div>
+        <div class="links-group">
+          <h3>Légal</h3>
+          <ul>
+            <li><a href="#">Conditions d'utilisation</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+        <div class="links-group">
+          <h3>Réseaux</h3>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/nexalab" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            <li><a href="https://www.twitter.com/nexalab" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.facebook.com/nexalab" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2025 NexaLab. Tous droits réservés.</p>
+      <p>Conçu avec ❤️ pour l'Afrique</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    (function () {
+      /* ── 1. Taguer les éléments à animer ── */
+      function tag(selector, dir, delayIndexes) {
+        document.querySelectorAll(selector).forEach(function (el, i) {
+          el.classList.add('sr', 'sr-' + dir);
+          if (delayIndexes) {
+            var d = delayIndexes[i % delayIndexes.length];
+            if (d) el.classList.add('d' + d);
+          }
+        });
+      }
+
+      tag('.hero__content', 'left');
+      tag('.hero__visual',  'right');
+
+      tag('.about__text',       'left');
+      tag('.about__visual',     'right');
+      tag('.about__value-card', 'bottom', [1, 2, 3]);
+
+      tag('#services .section-label', 'bottom');
+      tag('#services .section-title', 'bottom');
+      tag('#services .section-sub',   'bottom');
+      tag('.service-card', 'bottom', [1, 2, 3]);
+
+      tag('#stats .section-label', 'bottom');
+      tag('#stats .section-title', 'bottom');
+      tag('#stats .section-sub',   'bottom');
+      tag('.stat-item', 'bottom', [1, 2, 3, 4]);
+
+      tag('#team .section-label', 'bottom');
+      tag('#team .section-title', 'bottom');
+      tag('#team .section-sub',   'bottom');
+      tag('.team-block',     'left');
+      tag('.partners-block', 'right');
+
+      tag('.team-photo-header', 'bottom');
+      tag('figure', 'bottom', [1, 2, 3, 4]);
+
+      tag('.temoignages-header', 'bottom');
+      tag('.temoignage-card', 'bottom', [1, 2, 3, 4]);
+
+      tag('.contact-info', 'left');
+      tag('.contact-form', 'right');
+
+      /* ── 2. IntersectionObserver — révèle au scroll ── */
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.sr').forEach(function (el) {
+        io.observe(el);
+      });
+
+      /* ── 3. Nav active au scroll ── */
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.nav__link');
+
+      window.addEventListener('scroll', function () {
+        var current = '';
+        sections.forEach(function (s) {
+          if (window.scrollY >= s.offsetTop - 120) current = s.id;
+        });
+        navLinks.forEach(function (link) {
+          link.classList.remove('nav__link--active');
+          if (link.getAttribute('href') === '#' + current)
+            link.classList.add('nav__link--active');
+        });
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
