@@ -1,0 +1,177 @@
+/* ============================================================
+   NexaLab — team-membres.css  ★ AMÉLIORÉ
+   Photos circulaires · Glassmorphisme · Shine effect · Badge role
+   ============================================================ */
+
+#team-membres {
+  background: linear-gradient(160deg, #0d1829 0%, #0b0f19 50%, #0f1c38 100%);
+  padding: var(--space-3xl) 0;
+  position: relative;
+  overflow: clip;
+}
+/* Halos décoratifs */
+#team-membres::before {
+  content: '';
+  position: absolute; top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(59,119,223,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+#team-membres::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(59,119,223,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Wrapper ── */
+.team-wrapper {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-p);
+  position: relative; z-index: 1;
+}
+
+/* ── Header ── */
+.team-photo-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.team-photo-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  display: inline-block;
+  position: relative;
+}
+.team-photo-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -14px; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: var(--r-full);
+}
+
+/* ── Grid ── */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ── Cards ── */
+figure {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--r-lg);
+  padding: 40px 24px 32px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0;
+}
+/* Ligne top au hover */
+figure::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+figure:hover::before { transform: scaleX(1); }
+figure:hover {
+  transform: translateY(-10px);
+  border-color: rgba(59,119,223,0.25);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35), 0 0 40px rgba(59,119,223,0.08);
+  background: rgba(59,119,223,0.04);
+}
+
+/* ── Photo ── */
+figure img {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(59,119,223,0.2);
+  outline: 4px solid rgba(59,119,223,0.06);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: 0 auto 20px;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+figure:hover img {
+  border-color: var(--color-primary);
+  outline-color: rgba(59,119,223,0.15);
+  transform: scale(1.08);
+  box-shadow: 0 8px 30px rgba(59,119,223,0.25);
+}
+
+/* ── Caption ── */
+figcaption {
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  font-family: var(--font-display);
+}
+figcaption b {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  background: rgba(59,119,223,0.1);
+  border: 1px solid rgba(59,119,223,0.2);
+  border-radius: var(--r-full);
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+}
+figure:hover figcaption b {
+  background: rgba(59,119,223,0.2);
+  border-color: rgba(59,119,223,0.4);
+  color: #fff;
+}
+
+/* ── Shine effect ── */
+.shine {
+  position: absolute; top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+figure:hover .shine { left: 200%; }
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .team-container { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 480px) {
+  #team-membres { padding: var(--space-2xl) 0; }
+  .team-photo-header { margin-bottom: 32px; }
+  .team-container { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  figure { padding: 24px 12px 20px; }
+  figure img { width: 72px; height: 72px; }
+  figcaption { font-size: 0.85rem; }
+}

@@ -1,0 +1,180 @@
+/* ============================================
+   NexaLab — Section À propos / Mission
+   Conforme à la maquette : texte + image + 3 cards
+   ============================================ */
+
+.about {
+  background-color: var(--color-bg-section-alt);
+  position: relative;
+  padding-bottom: var(--spacing-2xl);
+}
+
+/* — Layout principal 2 colonnes — */
+.about__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3xl);
+}
+
+/* — Colonne texte (gauche) — */
+.about__text {
+  flex: 1;
+}
+
+.about__label {
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.about__title {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+}
+
+.about__description {
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.about__description:last-of-type {
+  margin-bottom: 0;
+}
+
+/* — Colonne image (droite) — */
+.about__visual {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.about__image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+/* ============================================
+   3 Cards ADN : Modernité, Rigueur, Impact
+   ============================================ */
+
+.about__values {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+}
+
+.about__value-card {
+  flex: 1;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.about__value-card:hover {
+  border-color: rgba(59, 119, 223, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Icône de la card */
+.about__value-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__value-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--color-primary);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* Titre de la card */
+.about__value-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Petite barre bleue sous le titre */
+.about__value-title::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2.5px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  margin: 0.5rem auto 0;
+}
+
+/* Description de la card */
+.about__value-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-top: var(--spacing-xs);
+}
+
+/* ============================================
+   Responsive — Mobile (< 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .about__inner {
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+
+  .about__visual {
+    width: 100%;
+  }
+
+  .about__image {
+    max-width: 100%;
+  }
+
+  .about__values {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .about__value-card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ============================================
+   Responsive — Tablette (768px–1024px)
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about__inner {
+    gap: var(--spacing-xl);
+  }
+
+  .about__values {
+    gap: var(--spacing-sm);
+  }
+
+  .about__value-card {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+}

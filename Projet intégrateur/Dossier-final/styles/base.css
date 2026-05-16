@@ -1,0 +1,331 @@
+/* ============================================================
+   NexaLab — base.css
+   Design System unifié : variables, reset, typographie, utilitaires
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+
+/* ── Variables ── */
+:root {
+  /* Couleurs */
+  --color-primary:       #3b77df;
+  --color-primary-hover: #2d62c4;
+  --color-accent:        #60a5fa;
+
+  /* Fonds */
+  --color-bg:            #0b0f19;
+  --color-bg-alt:        #0d1120;
+  --color-bg-header:     #0f1117;
+  --color-bg-card:       #111827;
+
+  /* Bordures */
+  --color-border:        #1e293b;
+  --color-border-l:      #2d3f53;
+
+  /* Textes */
+  --color-text:          #f8fafc;
+  --color-text-muted:    #94a3b8;
+  --color-light:         #cbd5e1;
+
+  /* Typographie */
+  --font-body:       'Inter', -apple-system, sans-serif;
+  --font-display:    'Syne', sans-serif;
+
+  /* Espacements */
+  --space-xs:   0.5rem;
+  --space-sm:   1rem;
+  --space-md:   1.5rem;
+  --space-lg:   2rem;
+  --space-xl:   3rem;
+  --space-2xl:  5rem;
+  --space-3xl:  8rem;
+
+  /* Conteneur */
+  --container:    1200px;
+  --container-p:  2rem;
+
+  /* Rayons */
+  --r-sm:   6px;
+  --r-md:   12px;
+  --r-lg:   20px;
+  --r-full: 999px;
+
+  /* Transitions */
+  --t-fast: 0.2s ease;
+  --t-base: 0.3s ease;
+
+  /* Glow */
+  --glow: rgba(59, 119, 223, 0.15);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typographie globale ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -1.5px; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.5px; }
+h3 { font-size: 1.1rem; font-weight: 700; }
+
+p  { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.75; }
+a  { color: var(--color-primary); text-decoration: none; transition: color var(--t-fast); }
+a:hover { color: var(--color-primary-hover); }
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { list-style: none; }
+
+::selection { background: var(--color-primary); color: #fff; }
+
+/* ── Utilitaires ── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-p);
+}
+
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+/* Label de section (ex: "Nos expertises") */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+.section-label::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+/* Titre de section */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+.section-title span { color: var(--color-accent); }
+
+/* Sous-titre de section */
+.section-sub {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 500px;
+  line-height: 1.75;
+  margin-bottom: 56px;
+}
+
+/* Séparateur */
+.sep {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-border-l), transparent);
+  margin: 0 6vw;
+}
+
+/* ──────────────────────────────────────
+   ANIMATIONS CSS PURES — au chargement
+   Aucun JavaScript requis.
+   ────────────────────────────────────── */
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-45px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(45px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Propriétés d'animation communes ── */
+.hero__content,
+.hero__visual,
+.about__text,
+.about__visual,
+.about__value-card,
+#services .section-label,
+#services .section-title,
+#services .section-sub,
+.service-card,
+#stats .section-label,
+#stats .section-title,
+#stats .section-sub,
+.stat-item,
+#team .section-label,
+#team .section-title,
+#team .section-sub,
+.team-block,
+.partners-block,
+.team-photo-header,
+#team-membres figure,
+.temoignages-header,
+.temoignage-card,
+.contact-info,
+.contact-form {
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+}
+
+/* ── Slide depuis la gauche ── */
+.hero__content,
+.about__text,
+.team-block,
+.contact-info {
+  animation-name: fadeInLeft;
+}
+
+/* ── Slide depuis la droite ── */
+.hero__visual,
+.about__visual,
+.partners-block,
+.contact-form {
+  animation-name: fadeInRight;
+}
+
+/* ── Slide depuis le bas ── */
+.about__value-card,
+#services .section-label,
+#services .section-title,
+#services .section-sub,
+.service-card,
+#stats .section-label,
+#stats .section-title,
+#stats .section-sub,
+.stat-item,
+#team .section-label,
+#team .section-title,
+#team .section-sub,
+.team-photo-header,
+#team-membres figure,
+.temoignages-header,
+.temoignage-card {
+  animation-name: fadeInUp;
+}
+
+/* ── Délais décalés (effet cascade) ── */
+
+/* Hero — immédiat */
+.hero__content { animation-delay: 0.1s; }
+.hero__visual  { animation-delay: 0.3s; }
+
+/* About */
+.about__text   { animation-delay: 0.15s; }
+.about__visual { animation-delay: 0.3s; }
+.about__value-card:nth-child(1) { animation-delay: 0.45s; }
+.about__value-card:nth-child(2) { animation-delay: 0.6s; }
+.about__value-card:nth-child(3) { animation-delay: 0.75s; }
+
+/* Services */
+#services .section-label { animation-delay: 0.1s; }
+#services .section-title { animation-delay: 0.2s; }
+#services .section-sub   { animation-delay: 0.3s; }
+.service-card:nth-child(1) { animation-delay: 0.4s; }
+.service-card:nth-child(2) { animation-delay: 0.55s; }
+.service-card:nth-child(3) { animation-delay: 0.7s; }
+
+/* Stats */
+#stats .section-label { animation-delay: 0.1s; }
+#stats .section-title { animation-delay: 0.2s; }
+#stats .section-sub   { animation-delay: 0.3s; }
+.stat-item:nth-child(1) { animation-delay: 0.4s; }
+.stat-item:nth-child(2) { animation-delay: 0.55s; }
+.stat-item:nth-child(3) { animation-delay: 0.7s; }
+.stat-item:nth-child(4) { animation-delay: 0.85s; }
+
+/* Équipe */
+#team .section-label { animation-delay: 0.1s; }
+#team .section-title { animation-delay: 0.2s; }
+#team .section-sub   { animation-delay: 0.3s; }
+.team-block     { animation-delay: 0.4s; }
+.partners-block { animation-delay: 0.55s; }
+
+/* Membres photos */
+.team-photo-header { animation-delay: 0.1s; }
+#team-membres figure:nth-child(1) { animation-delay: 0.25s; }
+#team-membres figure:nth-child(2) { animation-delay: 0.4s; }
+#team-membres figure:nth-child(3) { animation-delay: 0.55s; }
+#team-membres figure:nth-child(4) { animation-delay: 0.7s; }
+
+/* Témoignages */
+.temoignages-header { animation-delay: 0.1s; }
+.temoignage-card:nth-child(1) { animation-delay: 0.25s; }
+.temoignage-card:nth-child(2) { animation-delay: 0.4s; }
+.temoignage-card:nth-child(3) { animation-delay: 0.55s; }
+.temoignage-card:nth-child(4) { animation-delay: 0.7s; }
+
+/* Contact */
+.contact-info { animation-delay: 0.15s; }
+.contact-form { animation-delay: 0.3s; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE GLOBAL — Mobile first corrections
+   ══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root {
+    --container-p: 1.1rem;
+    --space-3xl:   4rem;
+    --space-2xl:   3rem;
+    --space-xl:    2rem;
+    --space-lg:    1.5rem;
+  }
+
+  /* Titres */
+  h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); letter-spacing: -0.8px; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+  /* Section labels centrés */
+  .section-label { justify-content: center; }
+  .section-title { text-align: center; }
+  .section-sub   { text-align: center; margin-left: auto; margin-right: auto; }
+
+  /* Séparateurs moins larges */
+  .sep { margin: 0 1rem; }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-p: 0.9rem;
+    --space-3xl:   3rem;
+    --space-2xl:   2rem;
+  }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaLab</title>
+
+  <!-- ── Feuilles de style modulaires (une par section) ── -->
+  <link rel="stylesheet" href="styles/base.css">       <!-- Variables, reset, typographie -->
+  <link rel="stylesheet" href="styles/services.css">   <!-- Section Services & Expertises -->
+  <link rel="stylesheet" href="styles/stats.css">      <!-- Section Chiffres Clés -->
+  <link rel="stylesheet" href="styles/team.css">       <!-- Section Équipe & Partenaires -->
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION RAPIDE ENTRE SECTIONS
+  ══════════════════════════════════════ -->
+  <nav class="section-nav">
+    <span class="active">Services</span>
+    <span>Chiffres</span>
+    <span>Équipe</span>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 1 — SERVICES & EXPERTISES
+  ══════════════════════════════════════ -->
+  <section id="services">
+
+    <!-- En-tête de section -->
+    <p class="section-eyebrow">Nos expertises</p>
+    <h2 class="section-title">Des solutions <span>taillées</span><br>pour l'Afrique</h2>
+    <p class="section-sub">Nous combinons IA, données et connectivité pour transformer les défis africains en opportunités concrètes.</p>
+
+    <!-- Grille des 3 cartes de services -->
+    <div class="services-grid">
+
+      <!-- Carte 1 : Intelligence Artificielle -->
+      <article class="service-card">
+        <div class="service-icon">
+          <!-- Icône SVG : cerveau/réseau neuronal -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+               viewBox="0 0 24 24" stroke="#ffffff" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 2a4.5 4.5 0 0 1 4.5 4.5v.5h.5a3.5 3.5 0 0 1 0 7H9.5A4.5 4.5 0 0 1 9.5 2z"/>
+            <path d="M14 9.5V14m-4.5-5v5M7 14h10"/>
+            <circle cx="9.5" cy="17" r="1"/>
+            <circle cx="14.5" cy="17" r="1"/>
+            <path d="M9.5 18v2m5-2v2"/>
+          </svg>
+        </div>
+        <h3>Intelligence Artificielle</h3>
+        <p>Nos modèles apprennent, anticipent et transforment vos données en décisions stratégiques gagnantes.</p>
+        <span class="card-tag">IA & ML</span>
+      </article>
+
+      <!-- Carte 2 : Internet des Objets -->
+      <article class="service-card">
+        <div class="service-icon">
+          <!-- Icône SVG : ondes wifi / connectivité -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+               viewBox="0 0 24 24" stroke="#ffffff" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="2"/>
+            <path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7"/>
+            <path d="M5 5a9.9 9.9 0 0 0 0 14M19 5a9.9 9.9 0 0 1 0 14"/>
+          </svg>
+        </div>
+        <h3>Internet des Objets (IoT)</h3>
+        <p>Connectez vos équipements et libérez le potentiel de vos infrastructures avec nos solutions intelligentes.</p>
+        <span class="card-tag">Connectivité</span>
+      </article>
+
+      <!-- Carte 3 : Data & Analytics -->
+      <article class="service-card">
+        <div class="service-icon">
+          <!-- Icône SVG : graphique en barres -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+               viewBox="0 0 24 24" stroke="#ffffff" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="12" width="4" height="9" rx="1"/>
+            <rect x="10" y="7" width="4" height="14" rx="1"/>
+            <rect x="17" y="3" width="4" height="18" rx="1"/>
+            <line x1="3" y1="22" x2="21" y2="22"/>
+          </svg>
+        </div>
+        <h3>Data & Analytics</h3>
+        <p>Vos données sont un trésor. Nous les transformons en insights puissants pour un avantage compétitif immédiat.</p>
+        <span class="card-tag">Big Data</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Séparateur visuel entre sections -->
+  <div class="sep"></div>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 2 — CHIFFRES CLÉS
+  ══════════════════════════════════════ -->
+  <section id="stats">
+
+    <!-- En-tête centré -->
+    <div class="stats-header">
+      <p class="section-eyebrow">En chiffres</p>
+      <h2 class="section-title">L'impact <span>NexaLab</span></h2>
+      <p class="section-sub">Des résultats concrets qui témoignent de notre engagement envers l'excellence technologique.</p>
+    </div>
+
+    <!-- Bande unifiée des 4 statistiques -->
+    <div class="stats-grid">
+
+      <div class="stat-item">
+        <div class="stat-number">+120</div>
+        <div class="stat-label">Projets réussis à travers le continent</div>
+        <div class="stat-divider"></div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number">15</div>
+        <div class="stat-label">Pays connectés à nos solutions</div>
+        <div class="stat-divider"></div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number">30</div>
+        <div class="stat-label">Entreprises leaders accompagnées</div>
+        <div class="stat-divider"></div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number">50</div>
+        <div class="stat-label">Experts passionnés qui repoussent les limites</div>
+        <div class="stat-divider"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Séparateur visuel entre sections -->
+  <div class="sep"></div>
+
+
+  <!-- ══════════════════════════════════════
+       SECTION 3 — ÉQUIPE & PARTENAIRES
+  ══════════════════════════════════════ -->
+  <section id="team">
+
+    <!-- En-tête de section -->
+    <p class="section-eyebrow">Notre écosystème</p>
+    <h2 class="section-title">Les visages de<br><span>NexaLab</span></h2>
+    <p class="section-sub">Une équipe soudée et un réseau de partenaires stratégiques pour un impact maximal.</p>
+
+    <!-- Layout 2 colonnes -->
+    <div class="team-layout">
+
+      <!-- Bloc Équipe (colonne gauche) -->
+      <div class="team-block">
+        <h3>Une équipe visionnaire</h3>
+        <p>Chez NexaLab, nous réunissons des talents audacieux : ingénieurs, designers et stratèges qui partagent une obsession commune — créer de la technologie qui inspire confiance et génère de l'impact.</p>
+
+        <!-- Avatars avec initiales des membres -->
+        <div class="team-avatars">
+          <div class="avatar av1">AM</div>
+          <div class="avatar av2">KD</div>
+          <div class="avatar av3">FO</div>
+          <div class="avatar av4">SB</div>
+          <div class="avatar av-more">+46</div>
+        </div>
+
+        <!-- Tags des rôles disponibles dans l'équipe -->
+        <div class="team-roles">
+          <span class="role-tag">Ingénierie</span>
+          <span class="role-tag">Design</span>
+          <span class="role-tag">Data Science</span>
+          <span class="role-tag">Stratégie</span>
+          <span class="role-tag">DevOps</span>
+        </div>
+      </div>
+
+      <!-- Bloc Partenaires (colonne droite) -->
+      <div class="partners-block">
+        <h3>Des partenaires stratégiques</h3>
+        <p>Nous collaborons avec les meilleurs incubateurs, universités et entreprises pour amplifier notre force et conquérir de nouveaux marchés.</p>
+
+        <!-- Logos fictifs des partenaires (grayscale → couleur au survol) -->
+        <div class="logos-grid">
+          <div class="partner-logo">TechHub</div>
+          <div class="partner-logo">DataCo</div>
+          <div class="partner-logo">InnoLab</div>
+          <div class="partner-logo">NexVentures</div>
+          <div class="partner-logo">AfriCloud</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPT : Scroll vers la section cliquée
+  ══════════════════════════════════════ -->
+  <script>
+    const navSpans = document.querySelectorAll('.section-nav span');
+    navSpans.forEach((span, index) => {
+      span.addEventListener('click', () => {
+        const ids = ['services', 'stats', 'team'];
+        document.getElementById(ids[index]).scrollIntoView({ behavior: 'smooth' });
+        navSpans.forEach(s => s.classList.remove('active'));
+        span.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

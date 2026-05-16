@@ -1,0 +1,271 @@
+/* ============================================
+   NexaLab — Hero Section
+   Conforme à la maquette : 2 colonnes, image droite
+   ============================================ */
+
+.hero {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  padding: var(--spacing-2xl) 0;
+}
+
+/* Fond étoilé subtil */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(59, 119, 223, 0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 60%, rgba(59, 119, 223, 0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 10%, rgba(255, 255, 255, 0.15) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 40%, rgba(59, 119, 223, 0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Layout 2 colonnes */
+.hero__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+/* — Colonne gauche : texte — */
+.hero__content {
+  flex: 1;
+  max-width: 550px;
+}
+
+/* Badge "INNOVATION • IA • DATA • IOT" */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: rgba(59, 119, 223, 0.1);
+  border: 1px solid rgba(59, 119, 223, 0.25);
+  color: var(--color-text-light);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Titre */
+.hero__title {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.1;
+}
+
+.hero__title-highlight {
+  color: var(--color-primary);
+}
+
+/* Sous-titre */
+.hero__subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.7;
+  max-width: 450px;
+}
+
+/* — Boutons CTA — */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+/* Bouton principal "Découvrir nos services" */
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero__cta:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+.hero__cta-arrow {
+  font-size: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.hero__cta:hover .hero__cta-arrow {
+  transform: translateX(3px);
+}
+
+/* Bouton secondaire "Nous contacter" */
+.hero__cta-secondary {
+  background-color: transparent;
+  border: 1.5px solid var(--color-border-light);
+  color: var(--color-text);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.hero__cta-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+/* — Colonne droite : image — */
+.hero__visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero__image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* — Indicateur scroll (souris) — */
+.hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  z-index: 2;
+}
+
+.hero__scroll-mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid var(--color-text-muted);
+  border-radius: 12px;
+  position: relative;
+  opacity: 0.5;
+}
+
+.hero__scroll-mouse::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background-color: var(--color-text-muted);
+  border-radius: 2px;
+  animation: scroll-down 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-down {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+}
+
+.hero__scroll-arrow {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  opacity: 0.5;
+  animation: arrow-bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ============================================
+   Responsive — Mobile (< 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-xl) 0 var(--spacing-2xl);
+  }
+
+  .hero__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__subtitle {
+    max-width: 100%;
+  }
+
+  .hero__actions {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .hero__cta,
+  .hero__cta-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero__visual {
+    order: -1;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .hero__image {
+    max-width: 300px;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}
+
+/* ============================================
+   Responsive — Tablette (768px–1024px)
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero__inner {
+    gap: var(--spacing-lg);
+  }
+
+  .hero__image {
+    max-width: 380px;
+  }
+}

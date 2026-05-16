@@ -1,0 +1,168 @@
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #091320;
+}
+
+/* ========== SECTION CONTACT (responsive) ========== */
+.contact-section {
+  background-color: #091320;
+  color: #ffffff;
+  padding: 4rem 2rem;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+/* colonne gauche */
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.contact-detail {
+  margin-bottom: 2rem;
+}
+
+.contact-detail h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.contact-detail p {
+  color: #cccccc;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* colonne droite - formulaire */
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+  width: auto;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+/* ========== RESPONSIVE (uniquement pour le contact) ========== */
+/* Tablette et mobile : empilement et ajustements */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 1.5rem;
+  }
+  .contact-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 1.6rem;
+  }
+  .contact-detail h3 {
+    font-size: 1.1rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem 0.9rem;
+  }
+  button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Très petits mobiles (moins de 480px) */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 1.5rem 1rem;
+  }
+  .contact-info, .contact-form {
+    min-width: 100%;
+  }
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 1.4rem;
+  }
+  .form-group label {
+    font-size: 0.85rem;
+  }
+}

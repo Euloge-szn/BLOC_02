@@ -1,0 +1,121 @@
+/* Section principale */
+.temoignages {
+  background-color: #0a111f; /* fond extérieur très sombre */
+  font-family: 'Montserrat', sans-serif;
+  padding: 4rem 2rem;
+}
+
+.temoignages-header h1 {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Grille */
+.temoignages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cartes – cadres plus sombres */
+.temoignage-card {
+  background-color: #0f1c2d;  /* plus sombre que #274265 */
+  border-radius: 20px;
+  padding: 1.8rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Effet de déroulement (comme menu) */
+.temoignage-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.temoignage-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Animation carte au survol */
+.temoignage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
+  background-color: #132637;
+  border-color: #3b82f6;
+}
+
+/* Étoiles */
+.stars {
+  margin-bottom: 1rem;
+  color: #fbbf24; /* jaune doré */
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+}
+
+.stars i {
+  margin-right: 2px;
+}
+
+/* Texte en italique + guillemets */
+.temoignage-card p {
+  color: #e2e8f0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+.quote-icon {
+  color: #3b82f6;
+  margin-right: 8px;
+  font-size: 1rem;
+  opacity: 0.7;
+  font-style: normal;
+}
+
+/* Nom de l'auteur */
+.auteur {
+  font-style: normal;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  text-align: right;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .temoignages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .temoignages {
+    padding: 2rem 1rem;
+  }
+  .temoignage-card {
+    padding: 1.5rem;
+  }
+  .stars {
+    font-size: 1rem;
+  }
+}

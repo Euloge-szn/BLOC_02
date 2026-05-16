@@ -1,0 +1,180 @@
+/* ============================================================
+   NexaLab — about.css  ★ AMÉLIORÉ
+   Split layout · Cards avec icônes premium · Image avec border glow
+   ============================================================ */
+
+.about {
+  background-color: var(--color-bg-alt);
+  padding: var(--space-3xl) 0;
+  position: relative;
+  overflow: clip;
+}
+.about::before {
+  content: '';
+  position: absolute;
+  bottom: 0; right: -200px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(59,119,223,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Layout 2 colonnes ── */
+.about__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xl);
+  position: relative;
+  z-index: 1;
+}
+
+.about__text { flex: 1; }
+
+.about__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+.about__label::before {
+  content: '';
+  width: 24px; height: 1.5px;
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+.about__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--space-lg);
+  line-height: 1.1;
+}
+
+.about__description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.about__description:last-of-type { margin-bottom: 0; }
+
+/* ── Image ── */
+.about__visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.about__visual::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: calc(var(--r-lg) + 1px);
+  background: linear-gradient(135deg, rgba(59,119,223,0.2) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  max-width: 484px;
+  margin: auto;
+}
+.about__image {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--r-lg);
+  object-fit: cover;
+  border: 1px solid rgba(59,119,223,0.15);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* ── 3 Cards ADN ── */
+.about__values {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.about__value-card {
+  flex: 1;
+  background: linear-gradient(160deg, #131b2e 0%, var(--color-bg-card) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  transition: border-color var(--t-base), transform var(--t-base), box-shadow var(--t-base);
+  position: relative;
+  overflow: hidden;
+}
+.about__value-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(59,119,223,0.08) 0%, transparent 70%);
+  opacity: 0; transition: opacity var(--t-base);
+}
+.about__value-card:hover {
+  border-color: rgba(59,119,223,0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+.about__value-card:hover::before { opacity: 1; }
+
+.about__value-icon {
+  width: 52px; height: 52px;
+  background: rgba(59,119,223,0.1);
+  border: 1px solid rgba(59,119,223,0.2);
+  border-radius: var(--r-md);
+  margin: 0 auto var(--space-sm);
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--t-base), border-color var(--t-base);
+}
+.about__value-card:hover .about__value-icon {
+  background: rgba(59,119,223,0.18);
+  border-color: rgba(59,119,223,0.4);
+}
+.about__value-icon svg {
+  width: 28px; height: 28px;
+  stroke: var(--color-primary); fill: none; stroke-width: 1.5;
+}
+
+.about__value-title {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  position: relative; display: inline-block;
+}
+.about__value-title::after {
+  content: '';
+  display: block; width: 24px; height: 2px;
+  background: var(--color-primary);
+  border-radius: var(--r-full);
+  margin: 6px auto 0;
+  transition: width var(--t-base);
+}
+.about__value-card:hover .about__value-title::after { width: 40px; }
+
+.about__value-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about__inner { flex-direction: column; gap: var(--space-xl); }
+  .about__image { max-width: 100%; }
+  .about__values { flex-direction: column; gap: var(--space-sm); }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about__inner { gap: var(--space-xl); }
+}

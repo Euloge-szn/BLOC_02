@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NexaLab - Innovation Numérique</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#1E40AF', // Blue 800
+            secondary: '#3B82F6', // Blue 500
+            dark: '#0B1120',
+            darker: '#020617',
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, rgba(11, 17, 32, 1) 70%)',
+            'card-glass': 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styles">
+    body {
+      background-color: #020617;
+      color: #F8FAFC;
+    }
+    .glass-nav {
+      background: rgba(2, 6, 23, 0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(59, 130, 246, 0.3);
+      transform: translateY(-2px);
+    }
+    .text-glow {
+      text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+    .bg-gradient-custom {
+      background: linear-gradient(180deg, #020617 0%, #0F172A 100%);
+    }
+    .bg-gradient-blue {
+      background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+    }
+    .light-section {
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+    .light-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    .light-card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+    }
+    .stats-divider {
+      position: relative;
+    }
+    .stats-divider:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 60%;
+      width: 1px;
+      background-color: #CBD5E1;
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-sans">
+<!-- BEGIN: Navigation -->
+<nav class="fixed w-full z-50 glass-nav transition-all duration-300" data-purpose="main-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<!-- Logo -->
+<div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+<svg class="w-8 h-8 text-blue-500" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2 17L12 22L22 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2 12L12 17L22 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="font-bold text-xl tracking-tight">NexaLab</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-sm font-medium text-slate-300 hover:text-white transition-colors" href="#about">À propos</a>
+<a class="text-sm font-medium text-slate-300 hover:text-white transition-colors" href="#services">Services</a>
+<a class="text-sm font-medium text-slate-300 hover:text-white transition-colors" href="#testimonials">Témoignages</a>
+</div>
+<!-- CTA Button -->
+<div class="hidden md:flex">
+<a class="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-sm font-medium transition-all shadow-[0_0_15px_rgba(59,130,246,0.5)]" href="#contact">
+            Cobalt CTA
+          </a>
+</div>
+</div>
+</div>
+</nav>
+<!-- END: Navigation -->
+<!-- BEGIN: Main Content -->
+<main class="flex-grow">
+<!-- BEGIN: Hero Section -->
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-custom flex items-center justify-center min-h-screen text-center" data-purpose="hero-section">
+<!-- Background Glow Effects -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+          Propulser l'innovation <br class="hidden md:block"/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 text-glow">numérique en Afrique</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+          Propulser l'innovation numériantio numériques en Afrique avec des solutions technologiques de pointe et une expertise locale.
+        </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 font-semibold transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)]" href="#services">
+            Nos Services
+          </a>
+<a class="px-8 py-3.5 rounded-full glass-card hover:bg-white/10 font-semibold transition-all" href="#contact">
+            Contact
+          </a>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: About Section -->
+<section class="py-24 bg-darker relative" data-purpose="about-section" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<!-- Image -->
+<div class="relative rounded-2xl overflow-hidden glass-card p-2 aspect-square max-w-md mx-auto lg:mx-0">
+<img alt="3D Tech Cube" class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLtrA_RioEHIMc9_9tj4NFxRmr--TPD0k2XDK8-WBi1SOzyCVfoL-wC7q3pJN4n624irayavahCt5my9KrCxg7xl1MD69HZ9fSsCb0C7EYtWURXnLCwcCoWPI9ziZF--gwNlFRxo6MFdfV7kmEg6v-d54iXs960gbPYIAqjl-5xEb_26ZBSg2GecRomt_y1o9rzKOMauLFqe36oNGijaldfQZqOMmvQgwiy0Wlyvh65rK-9xyLkT_1W8oaQDy45cHivIo9nZOUIcY"/>
+</div>
+<!-- Content -->
+<div>
+<h2 class="text-3xl md:text-4xl font-bold mb-6">À propos</h2>
+<p class="text-slate-400 mb-10 leading-relaxed">
+              High-quality 3D abstract amet, consectetuor adipiscing elit, sed do eiusmod tempor nitih euismod kiclidunt ut labore dolore magna aliquam est vitupat.
+            </p>
+<div class="space-y-8">
+<!-- Feature 1 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl glass-card flex items-center justify-center text-blue-400">
+<i class="fa-solid fa-lightbulb text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Icon-led propositions</h3>
+<p class="text-slate-400 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam.</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl glass-card flex items-center justify-center text-cyan-400">
+<i class="fa-solid fa-lock text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Value techniqras</h3>
+<p class="text-slate-400 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, seam.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl glass-card flex items-center justify-center text-purple-400">
+<i class="fa-solid fa-gem text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Your canpontonce</h3>
+<p class="text-slate-400 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, seam.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: About Section -->
+<!-- BEGIN: Services Section (Light Theme) -->
+<section class="py-24 light-section" data-purpose="services-section" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Services</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service Card 1 -->
+<div class="light-card p-6 rounded-2xl flex flex-col h-full bg-blue-50/50">
+<div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
+<i class="fa-solid fa-database"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Data Solution</h3>
+<p class="text-slate-600 text-sm mb-6 flex-grow">Lorem ipsum dolor sit a, consectetur adipiscing elit.</p>
+<a class="text-blue-600 font-medium text-sm flex items-center gap-1 hover:text-blue-700 transition-colors mt-auto" href="#">
+              Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="light-card p-6 rounded-2xl flex flex-col h-full">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+<i class="fa-solid fa-chart-pie"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Data Pooking</h3>
+<p class="text-slate-600 text-sm mb-6 flex-grow">Lorem ipsum dolor sit a, consectetur adipiscing dltt.</p>
+<a class="text-blue-600 font-medium text-sm flex items-center gap-1 hover:text-blue-700 transition-colors mt-auto" href="#">
+              Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="light-card p-6 rounded-2xl flex flex-col h-full">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+<i class="fa-solid fa-code"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Custom-sotation</h3>
+<p class="text-slate-600 text-sm mb-6 flex-grow">Lorem ipsum dolor sit a, consectetur adipiscing.</p>
+<a class="text-blue-600 font-medium text-sm flex items-center gap-1 hover:text-blue-700 transition-colors mt-auto" href="#">
+              Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+<!-- Service Card 4 -->
+<div class="light-card p-6 rounded-2xl flex flex-col h-full">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+<i class="fa-solid fa-bullseye"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Data Interest Marketing</h3>
+<p class="text-slate-600 text-sm mb-6 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+<a class="text-blue-600 font-medium text-sm flex items-center gap-1 hover:text-blue-700 transition-colors mt-auto" href="#">
+              Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+<!-- Service Card 5 (Highlighted) -->
+<div class="light-card p-6 rounded-2xl flex flex-col h-full bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-md">
+<div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
+<i class="fa-solid fa-laptop-code"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Development Development</h3>
+<p class="text-slate-600 text-sm mb-6 flex-grow">Lorem ipsum dolor sit a, consectetur adipiscing dlit.</p>
+<a class="text-blue-600 font-medium text-sm flex items-center gap-1 hover:text-blue-700 transition-colors mt-auto" href="#">
+              Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+<!-- Service Card 6 -->
+<div class="light-card p-6 rounded-2xl flex flex-col h-full">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+<i class="fa-solid fa-desktop"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Development Solutions</h3>
+<p class="text-slate-600 text-sm mb-6 flex-grow">Lorem ipsum dolor sit amet, en amex inoiocerar.</p>
+<a class="text-blue-600 font-medium text-sm flex items-center gap-1 hover:text-blue-700 transition-colors mt-auto" href="#">
+              Learn more <i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Services Section -->
+<!-- BEGIN: Stats Section (Light Theme) -->
+<section class="py-16 bg-white border-y border-slate-200" data-purpose="stats-section">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-2xl font-bold mb-10 text-slate-800">Stats</h2>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-0">
+<div class="flex-1 stats-divider w-full sm:w-auto">
+<div class="text-4xl md:text-5xl font-light text-slate-900">10%</div>
+</div>
+<div class="flex-1 stats-divider w-full sm:w-auto">
+<div class="text-4xl md:text-5xl font-light text-slate-900">16%</div>
+</div>
+<div class="flex-1 stats-divider w-full sm:w-auto">
+<div class="text-4xl md:text-5xl font-light text-slate-900">17%</div>
+</div>
+<div class="flex-1 w-full sm:w-auto">
+<div class="text-4xl md:text-5xl font-light text-slate-900">200</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Stats Section -->
+<!-- BEGIN: Team Section (Light Theme) -->
+<section class="py-24 bg-slate-50" data-purpose="team-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold mb-12 text-slate-900">Team</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<!-- Team Member 1 -->
+<div class="text-center group">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg transition-transform group-hover:scale-105">
+<img alt="Saston Cosinai" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmc8LPgyN6zboDUCfq99zmskmO6oMNvD1r_DNe_jae2gWB75cnTN_2tN-DzrdlpTh0Si2zctLRggRnWZz1yl0AwfQtsdV2eUvEhYW0O29uUsfLhCiUooOzLF6NvDeUoWrkoVyVX9GmXUViY9Zc0YCuVdSB92Br9rqHP-vAbpS5KbF-Xrz8J1fdGxShlC0k0ZaPhw3EqHklIJiQ9YsZPnzMNLAczCnziSZxoegtmMN7qcBKJdhwUpv7GFZoW11I8DxxBkXDFqwJBtk"/>
+</div>
+<h4 class="font-bold text-slate-900">Saston Cosinai</h4>
+<p class="text-sm text-slate-500">Consectetur</p>
+</div>
+<!-- Team Member 2 -->
+<div class="text-center group">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg transition-transform group-hover:scale-105">
+<img alt="Anaia Prasich" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwaBGF_QylSl84BcCSmCJk4u0GuzA9aGKCD7Oi-dkCx-DOMcPeMxQwxZgeGGH3dpMmBUm-RIAe8t2jnBXN5eCx7mMLx6__Ya_2m0BrOSRrSRcZeR7L1zxf5gBzUlRtfIlM0ifD5ib7SOqjFoWA-p66vmP947qOMcCBGlW9wqJdyfGNklJdwZPl0TQXkpnHrOPw5AiKcgvebgH8mtQJHSqoSM-JY3Qd0lIcGigj7PcUTS44NNRiM0QgO4ipcGspHcsaWSIuSkJgp6M"/>
+</div>
+<h4 class="font-bold text-slate-900">Anaia Prasich</h4>
+<p class="text-sm text-slate-500">Malin</p>
+</div>
+<!-- Team Member 3 -->
+<div class="text-center group">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg transition-transform group-hover:scale-105">
+<img alt="James Nugaer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAln-40b4bDETR9DGA_lsVebjWFnbPEKwXfze6N4NGVWFqs-QtoiNlhPrRiLE9baYh2mnozsLkds8gwZr3CZ4XYmQgbLlp61z_UbHfCMNcmHKzw4OqN4U8XMsumasfXdMMwnElFggTMWyWiW6sPbCB4gSRHPMzvcf2MVtM95bz5B0zHHnPgjKHNwCbK7tUANxaRfCFGoNTMwpWq0wHXaUF-DcHvGVvfiacI2hzG3ld2aN7DyCsGa-9DWq2DjbD8PCjqobJ7P2wIlLo"/>
+</div>
+<h4 class="font-bold text-slate-900">James Nugaer</h4>
+<p class="text-sm text-slate-500">Conccteteur</p>
+</div>
+<!-- Team Member 4 -->
+<div class="text-center group">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg transition-transform group-hover:scale-105">
+<img alt="Peel Donoa" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOnYOMMtXJpzU2il6eIJcQfsaLeB80tStCei3jQKYqAmTeBB4G_yjF9nc22NQ_DKS0v882BJvTOZCP_1fZo1oQdIwzaQwOqhdyGqaR1z98_Kc6OTfbj33CbeLJRzdzWaQpRbASKEL-dql07D3zTqCuozEQzdGrOcZ7EaHfgvltkb_PHCDrbPWiIv_OZO185kX4YY1h72q_YToJDwgaJ8QmLnz2fvw7AlQd4vpE4wuzVGfBAt-yyVDe9MLP8q6jQc4eOVli_7TKEJc"/>
+</div>
+<h4 class="font-bold text-slate-900">Peel Donoa</h4>
+<p class="text-sm text-slate-500">Bokaniter</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Team Section -->
+<!-- BEGIN: Testimonials Section -->
+<section class="py-24 bg-gradient-blue relative overflow-hidden" data-purpose="testimonials-section" id="testimonials">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')] opacity-30"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-white">Testimonials</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl">
+<div class="text-blue-300 text-4xl mb-4 font-serif leading-none">"</div>
+<p class="text-blue-50 text-sm leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetaers adgiitcibng elit, soomroonoo incidilunt ut labore et dolore magna paraties.
+            </p>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl">
+<div class="text-blue-300 text-4xl mb-4 font-serif leading-none">"</div>
+<p class="text-blue-50 text-sm leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetaers adgiitcibng elit, reemnoenon incidilunt ut labore at dolore magna poielis.
+            </p>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl">
+<div class="text-blue-300 text-4xl mb-4 font-serif leading-none">"</div>
+<p class="text-blue-50 text-sm leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetuers adgiitcibng elit, cenmnenen incildilunt ut labore et dolore magna paeaties.
+            </p>
+</div>
+<!-- Testimonial 4 -->
+<div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl">
+<div class="text-blue-300 text-4xl mb-4 font-serif leading-none">"</div>
+<p class="text-blue-50 text-sm leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetuers adgiitcibng elit, conomenen incidilunt ut labore at dolore magna poeaitis.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Testimonials Section -->
+<!-- BEGIN: Contact Section -->
+<section class="py-24 bg-[#0A192F]" data-purpose="contact-section" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-bold mb-12 text-white">Contact</h2>
+<div class="grid lg:grid-cols-2 gap-12">
+<!-- Contact Info -->
+<div class="space-y-6">
+<div class="glass-card p-6 rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+<i class="fa-solid fa-phone"></i>
+</div>
+<div>
+<h4 class="font-semibold text-white">Contact us</h4>
+<p class="text-sm text-slate-400">Lorem ipsum dolor sit amet</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+<i class="fa-solid fa-envelope"></i>
+</div>
+<div>
+<h4 class="font-semibold text-white">Contact mail</h4>
+<p class="text-sm text-slate-400">Lerem ipsum dolor sit amet</p>
+</div>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="bg-white p-8 rounded-2xl shadow-xl">
+<h3 class="text-xl font-bold mb-6 text-slate-900">Form</h3>
+<form class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Name" type="text"/>
+</div>
+<div>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Last" type="text"/>
+</div>
+</div>
+<div>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Email" type="email"/>
+</div>
+<div>
+<textarea class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none" placeholder="Message" rows="4"></textarea>
+</div>
+<button class="w-full py-3.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold transition-colors mt-4" type="submit">
+                Submit
+              </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Contact Section -->
+</main>
+<!-- END: Main Content -->
+<!-- BEGIN: Footer -->
+<footer class="bg-darker pt-16 pb-8 border-t border-white/10" data-purpose="main-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
+<!-- Brand -->
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<svg class="w-6 h-6 text-blue-500" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="font-bold text-lg">NexaLab</span>
+</div>
+<p class="text-sm text-slate-400">
+            Lorem ipsum dolor alt amet, consextetur adipiscing elit.
+          </p>
+</div>
+<!-- Links Group 1 -->
+<div>
+<h4 class="font-semibold text-white mb-4">Company</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a class="hover:text-blue-400 transition-colors" href="#">Links</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Cobalt Blue</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Contact</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Nonalanter</a></li>
+</ul>
+</div>
+<!-- Links Group 2 -->
+<div>
+<h4 class="font-semibold text-white mb-4">Produnts</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a class="hover:text-blue-400 transition-colors" href="#">About us</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Reciilentials</a></li>
+<li><a class="hover:text-blue-400 transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<!-- Social -->
+<div>
+<h4 class="font-semibold text-white mb-4">Social Links</h4>
+<div class="flex gap-3">
+<a class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 transition-all" href="#">
+<i class="fa-brands fa-facebook-f text-xs"></i>
+</a>
+<a class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 transition-all" href="#">
+<i class="fa-brands fa-twitter text-xs"></i>
+</a>
+<a class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 transition-all" href="#">
+<i class="fa-brands fa-telegram text-xs"></i>
+</a>
+<a class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 transition-all" href="#">
+<i class="fa-brands fa-instagram text-xs"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+<p>© 2022 Noca. All rights reserved</p>
+<p>NexaLab</p>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>

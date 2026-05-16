@@ -1,0 +1,122 @@
+/* ════════════════════════════
+   SECTION CHIFFRES CLÉS
+   stats.css
+   Dépend de : base.css (variables et animation fadeUp)
+════════════════════════════ */
+
+
+/* ── Conteneur principal de la section ── */
+#stats {
+  background: var(--dark); /* Fond légèrement différent pour contraster avec #services */
+  padding: 100px 6vw;
+  position: relative; /* Nécessaire pour le pseudo-élément ::before (halo) */
+  overflow: hidden;
+}
+
+/* Halo bleu central décoratif en arrière-plan */
+#stats::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);/* Centré horizontalement */
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(37, 99, 235, .12) 0%, transparent 70%);
+  pointer-events: none; /* N'interfère pas avec les clics */
+}
+
+
+/* ── En-tête centré de la section ── */
+.stats-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+/* Supprime le trait horizontal du eyebrow (inutile quand c'est centré) */
+.stats-header .section-eyebrow {
+  justify-content: center;
+}
+.stats-header .section-eyebrow::before {
+  display: none;
+}
+
+/* Centre le sous-titre */
+.stats-header .section-sub {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ── Bande unifiée des 4 chiffres (Flexbox obligatoire) ── */
+.stats-grid {
+  display: flex; /* Aligne les stats horizontalement */
+  justify-content: center;
+  flex-wrap: wrap; /* Passe en 2 colonnes sur tablette, 1 sur mobile */
+  border: 1px solid var(--gray);  /* Bordure extérieure commune */
+  border-radius: 20px;
+  overflow: hidden; /* Garde les coins arrondis malgré les bordures internes */
+  max-width: 900px;
+  margin: 0 auto;/* Centré dans la section */
+}
+
+
+/* ── Cellule individuelle d'un chiffre ── */
+.stat-item {
+  flex: 1 1 200px; /* Taille minimale 200px */
+  padding: 48px 32px;
+  text-align: center;
+  border-right: 1px solid var(--gray); /* Séparateur vertical entre les stats */
+  position: relative;
+  transition: background .3s;
+  animation: fadeUp .5s ease both;
+}
+
+/* Décalage en cascade */
+.stat-item:nth-child(1) { animation-delay: .1s; }
+.stat-item:nth-child(2) { animation-delay: .2s; }
+.stat-item:nth-child(3) { animation-delay: .3s; }
+.stat-item:nth-child(4) { animation-delay: .4s; }
+
+/* Supprime la bordure droite du dernier élément */
+.stat-item:last-child { border-right: none; }
+
+/* Fond légèrement plus clair au survol */
+.stat-item:hover { background: var(--gray); }
+
+
+/* ── Le chiffre principal ── */
+.stat-number {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.5rem); /* Taille fluide entre mobile et desktop */
+  font-weight: 800;
+  color: var(--blue3); /* Bleu clair pour ressortir sur fond sombre */
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -1px; /* Resserré pour un look "display" moderne */
+}
+
+
+/* ── Label descriptif sous le chiffre ── */
+.stat-label {
+  font-size: .85rem;
+  color: var(--muted);
+  font-weight: 400; /* Un peu plus épais pour la lisibilité */
+  line-height: 1.5;
+  max-width: 130px;
+  margin: 0 auto; /* Centré */
+}
+
+
+/* ── Trait bleu qui apparaît sous le label au survol ── */
+.stat-divider {
+  width: 24px;
+  height: 2px;
+  background: var(--blue);
+  margin: 12px auto 0;
+  border-radius: 999px;
+  opacity: 0;/* Invisible par défaut */
+  transition: opacity .3s;
+}
+
+.stat-item:hover .stat-divider { opacity: 1; } /* Apparaît au survol */
