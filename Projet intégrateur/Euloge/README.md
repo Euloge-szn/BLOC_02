@@ -61,13 +61,13 @@ Le projet mobilise l'ensemble des compétences acquises sur les deux premiers mo
 
 | # | Nom complet | Sections réalisées |
 |---|---|---|
-| 1 | SOZAN Euloge | Header, Hero, À propos |
-| 2 | HOUENOU Adonis | Header, Hero, À propos |
-| 3 | Iréti Folakè Thérèsa Sarah BADOU | Services / Expertises, Chiffres clés |
-| 4 | SOSSOU Merveilles de Dieu | Services / Expertises, Chiffres clés |
-| 5 | Houéfa Immaculée Christelle AHOLOU | Formulaire de contact, Footer, Témoignages |
-| 6 | Aristote Léon Egnon HOUNTONDJI | Formulaire de contact, Footer, Témoignages |
-| 7 | LEFÈVRE | Formulaire de contact, Footer, Témoignages |
+| 1 | SOZAN Euloge *(Chef de projet)* | Header · Hero · À propos |
+| 2 | HOUENOU Adonis | Header · Hero · À propos |
+| 3 | Iréti Folakè Thérèsa Sarah BADOU | Services · Chiffres clés |
+| 4 | SOSSOU Merveilles de Dieu | Services · Chiffres clés |
+| 5 | Houéfa Immaculée Christelle AHOLOU | Contact · Footer · Témoignages |
+| 6 | Aristote Léon Egnon HOUNTONDJI | Contact · Footer · Témoignages |
+| 7 | LEFÈVRE | Contact · Footer · Témoignages |
 
 > **Chef de projet :** SOZAN Euloge
 
