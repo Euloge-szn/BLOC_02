@@ -165,10 +165,13 @@ figure:hover .shine { left: 200%; }
 
 /* ── Responsive ── */
 @media (max-width: 992px) {
-  .team-container { grid-template-columns: repeat(2, 1fr); }
+  .team-container { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
 @media (max-width: 480px) {
-  .team-container { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
-  figure { padding: 28px 20px; }
-  figure img { width: 90px; height: 90px; }
+  #team-membres { padding: var(--space-2xl) 0; }
+  .team-photo-header { margin-bottom: 32px; }
+  .team-container { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  figure { padding: 24px 12px 20px; }
+  figure img { width: 72px; height: 72px; }
+  figcaption { font-size: 0.85rem; }
 }

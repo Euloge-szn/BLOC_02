@@ -58,7 +58,7 @@
 }
 
 .about__description {
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   font-size: 0.95rem;
   line-height: 1.8;
   margin-bottom: 14px;
@@ -164,7 +164,7 @@
 
 .about__value-desc {
   font-size: 0.85rem;
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   line-height: 1.6;
   margin-top: 10px;
 }

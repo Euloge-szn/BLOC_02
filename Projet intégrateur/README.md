@@ -6,8 +6,9 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![Flexbox](https://img.shields.io/badge/Flexbox-00C2AA?style=flat)
+![Grid](https://img.shields.io/badge/CSS%20Grid-3b77df?style=flat)
 ![Responsive](https://img.shields.io/badge/Responsive-F0A500?style=flat)
-![FontAwesome](https://img.shields.io/badge/FontAwesome-528DD7?style=flat&logo=fontawesome&logoColor=white)
+![No JS](https://img.shields.io/badge/JavaScript-Aucun-red?style=flat)
 
 ---
 
@@ -58,14 +59,15 @@ Le projet mobilise l'ensemble des compétences acquises sur les deux premiers mo
 
 ## 3. L'équipe
 
-| # | Nom complet | Rôle |
+| # | Nom complet | Sections réalisées |
 |---|---|---|
-| 1 | SOZAN Euloge | |
-| 2 | Iréti Folakè Thérèsa Sarah BADOU | |
-| 3 | SOSSOU Merveilles de Dieu | |
-| 4 | Aristote Léon Egnon HOUNTONDJI | |
-| 5 | Houéfa Immaculée Christelle AHOLOU | |
-| 6 | HOUENOU Adonis | |
+| 1 | SOZAN Euloge | Header, Hero, À propos |
+| 2 | HOUENOU Adonis | Header, Hero, À propos |
+| 3 | Iréti Folakè Thérèsa Sarah BADOU | Services / Expertises, Chiffres clés |
+| 4 | SOSSOU Merveilles de Dieu | Services / Expertises, Chiffres clés |
+| 5 | Houéfa Immaculée Christelle AHOLOU | Formulaire de contact, Footer, Témoignages |
+| 6 | Aristote Léon Egnon HOUNTONDJI | Formulaire de contact, Footer, Témoignages |
+| 7 | LEFÈVRE | Formulaire de contact, Footer, Témoignages |
 
 > **Chef de projet :** SOZAN Euloge
 
@@ -74,46 +76,57 @@ Le projet mobilise l'ensemble des compétences acquises sur les deux premiers mo
 ## 4. Structure du dépôt
 
 ```
-nexalab/
-├── index.html              <- Point d'entrée unique du site
+Dossier-final/
+├── index.html              <- Version française du site
+├── index-en.html           <- Version anglaise du site
+├── README.md               <- Ce document
+├── CdC_Bloc2_ProjetIntegrateur.pdf  <- Cahier des charges
 ├── styles/
-│   ├── base.css            <- Reset, variables CSS, typographie globale
-│   ├── header.css          <- Navigation + logo
-│   ├── hero.css            <- Section d'accroche principale
-│   ├── about.css           <- Mission et présentation de NexaLab
-│   ├── services.css        <- Expertises et domaines d'intervention
-│   ├── stats.css           <- Chiffres clés
-│   ├── team.css            <- Equipe ou partenaires
-│   ├── testimonials.css    <- Témoignages clients
-│   ├── contact.css         <- Formulaire de contact
-│   └── footer.css          <- Pied de page
+│   ├── base.css            <- Reset, variables CSS, typographie, animations
+│   ├── header.css          <- Navigation + logo + sélecteur de langue
+│   ├── hero.css            <- Section d'accroche (particules, courbes SVG)
+│   ├── about.css           <- Mission et présentation (3 cartes ADN)
+│   ├── services.css        <- Expertises (cartes avec icônes SVG)
+│   ├── stats.css           <- Chiffres clés (compteurs gradient)
+│   ├── team.css            <- Équipe (avatars) et partenaires
+│   ├── team-membres.css    <- Photos des membres (glassmorphisme)
+│   ├── testimonials.css    <- Témoignages clients (cartes citations)
+│   ├── contact.css         <- Formulaire de contact (inputs premium)
+│   └── footer.css          <- Pied de page (colonnes, réseaux sociaux)
 ├── assets/
-│   ├── images/             <- Visuels libres de droits (Unsplash / Pexels)
-│   └── icons/              <- Icônes SVG personnalisées si nécessaire
-└── README.md               <- Ce document
+│   ├── images/
+│   │   ├── logo.png             <- Logo NexaLab
+│   │   ├── about-team.webp      <- Image hero (ville africaine)
+│   │   ├── hero-africa.jpg      <- Image section À propos (Afrique)
+│   │   ├── member-saston.jpg    <- Photo membre
+│   │   ├── member-charlie.jpg   <- Photo membre
+│   │   ├── member-john.jpg      <- Photo membre
+│   │   └── member-diana.jpg     <- Photo membre
+│   └── icons/              <- (Réservé) Icônes SVG supplémentaires
 ```
 
 **Justification de la structure :**
 Chaque fichier CSS correspond à une section précise du site. Cette séparation permet à chaque membre de l'équipe de travailler sur sa section sans conflit de merge Git. Elle facilite également la maintenance : modifier le hero ne touche jamais le footer.
 
-Le fichier `base.css` est le socle commun — il contient les variables CSS (couleurs, polices, espacements) partagées par tous les autres fichiers via `var()`.
+Le fichier `base.css` est le socle commun — il contient les variables CSS (couleurs, polices, espacements), les animations et les utilitaires partagés par tous les autres fichiers via `var()`.
 
 ---
 
 ## 5. Architecture CSS — Tableau de responsabilité
 
-| Fichier CSS | Responsabilité | Eléments gérés |
+| Fichier CSS | Responsabilité | Éléments gérés |
 |---|---|---|
-| `base.css` | Fondation globale | `:root` variables, reset CSS, styles body, import Google Fonts, classes utilitaires |
-| `header.css` | Navigation principale | header, nav, logo, liens de navigation, comportement sticky |
-| `hero.css` | Section d'accroche | Message principal, sous-titre, bouton CTA, fond visuel |
-| `about.css` | Présentation NexaLab | Texte de mission, vision, éléments différenciants |
-| `services.css` | Expertises | Cards de services, icônes Font Awesome, grille Flexbox |
-| `stats.css` | Chiffres clés | Compteurs, layout horizontal, séparateurs |
-| `team.css` | Equipe / Partenaires | Photos ou avatars, noms, postes, layout en grille |
-| `testimonials.css` | Témoignages | Cards citations, avatars, mise en page carousel-like |
-| `contact.css` | Formulaire de contact | form, input, textarea, styles des labels et bouton d'envoi |
-| `footer.css` | Pied de page | Colonnes footer, liens, réseaux sociaux, copyright |
+| `base.css` | Fondation globale | `:root` variables, reset CSS, styles body, import Google Fonts, classes utilitaires, animations CSS, responsive global |
+| `header.css` | Navigation principale | Header sticky, nav, logo, liens, CTA gradient, sélecteur de langue (FR/EN), hamburger mobile (checkbox hack) |
+| `hero.css` | Section d'accroche | Titre animé (gradient shift), particules CSS, courbes décoratives SVG, stats social proof, boutons CTA, filtre bleu sur image |
+| `about.css` | Présentation NexaLab | Layout 2 colonnes, texte de mission, image avec border glow, 3 cartes ADN (Modernité, Rigueur, Impact) avec icônes SVG |
+| `services.css` | Expertises | Cards premium avec glow hover, icônes gradient, tags pill, accent line au survol |
+| `stats.css` | Chiffres clés | Compteurs en gradient text, bande unifiée, divider animé au hover |
+| `team.css` | Équipe / Partenaires | Avatars dynamiques avec hover lift, role tags, logos partenaires en grille |
+| `team-membres.css` | Photos des membres | Photos circulaires, glassmorphisme, shine effect, badge rôle |
+| `testimonials.css` | Témoignages | Cards citations, grand guillemet décoratif, barre accent au hover, étoiles |
+| `contact.css` | Formulaire de contact | Inputs avec focus glow, textarea, labels uppercase, bouton gradient avec hover lift |
+| `footer.css` | Pied de page | Brand gradient text, colonnes de liens avec underline hover, icônes sociales SVG, barre copyright |
 
 ---
 
@@ -123,75 +136,111 @@ La palette de NexaLab repose sur deux niveaux de lecture : des fonds profonds qu
 
 ### Palette de couleurs
 
-| Nom | Hex | Usage |
-|---|---|---|
-| **Abyss** | `#0D1B2E` | Fond principal — profondeur, ancrage |
-| **Ocean** | `#152B4A` | Surfaces secondaires, cards |
-| **Cobalt** | `#1B4080` | Bordures, séparateurs, éléments structurels |
-| **Amber** | `#F0A500` | Accent primaire — CTA, valeur, action |
-| **Teal** | `#00C2AA` | Accent secondaire — innovation, technologie |
-| **Off-white** | `#E8EDF5` | Titres, textes importants |
-| **Mist** | `#8BA3BC` | Corps de texte, descriptions |
+| Nom | Variable CSS | Hex | Usage |
+|---|---|---|---|
+| **Background** | `--color-bg` | `#0b0f19` | Fond principal — profondeur, ancrage |
+| **Background Alt** | `--color-bg-alt` | `#0d1120` | Surfaces secondaires (about, stats, testimonials) |
+| **Card** | `--color-bg-card` | `#111827` | Fond des cartes et éléments interactifs |
+| **Primary** | `--color-primary` | `#3b77df` | Accent principal — CTA, liens, bordures actives |
+| **Accent** | `--color-accent` | `#60a5fa` | Accent secondaire — labels, highlights, gradient |
+| **Text** | `--color-text` | `#f8fafc` | Titres, textes importants |
+| **Text Muted** | `--color-text-muted` | `#94a3b8` | Corps de texte, descriptions |
+| **Border** | `--color-border` | `#1e293b` | Bordures subtiles, séparateurs |
 
 ```css
-/* Declaration dans base.css */
+/* Déclaration dans base.css */
 :root {
-  --color-abyss:    #0D1B2E;
-  --color-ocean:    #152B4A;
-  --color-cobalt:   #1B4080;
-  --color-amber:    #F0A500;
-  --color-teal:     #00C2AA;
-  --color-offwhite: #E8EDF5;
-  --color-mist:     #8BA3BC;
+  --color-primary:       #3b77df;
+  --color-accent:        #60a5fa;
+  --color-bg:            #0b0f19;
+  --color-bg-alt:        #0d1120;
+  --color-bg-card:       #111827;
+  --color-text:          #f8fafc;
+  --color-text-muted:    #94a3b8;
+  --color-border:        #1e293b;
 }
 ```
 
 **Justification des choix :**
-Le fond sombre (Abyss) installe immédiatement un registre technologique sérieux, cohérent avec l'audience cible (décideurs, investisseurs). L'Amber guide l'oeil vers les actions principales (CTA, chiffres clés) — couleur chaude sur fond froid, contraste maximum. Le Teal identifie visuellement tout ce qui touche à l'innovation et à la tech, créant un second niveau de lecture sans surcharger la hiérarchie.
+Le fond sombre (#0b0f19) installe immédiatement un registre technologique sérieux, cohérent avec l'audience cible (décideurs, investisseurs). Le bleu primary (#3b77df) guide l'œil vers les actions principales (CTA, chiffres clés) avec un contraste fort sur fond sombre. L'accent clair (#60a5fa) identifie visuellement tout ce qui touche à l'innovation et à la tech, créant un second niveau de lecture sans surcharger la hiérarchie.
 
 ---
 
 ## 7. Typographie
 
-| Famille | Usage | Caractéristique |
-|---|---|---|
-| **Space Grotesk** | Titres (h1 à h3) | Géométrique, dense, autorité immédiate |
-| **Plus Jakarta Sans** | Corps de texte, descriptions | Légère, fluide, lecture confortable |
+| Famille | Variable CSS | Usage | Caractéristique |
+|---|---|---|---|
+| **Syne** | `--font-display` | Titres (h1 à h3) | Géométrique, dense, autorité immédiate |
+| **Inter** | `--font-body` | Corps de texte, descriptions | Légère, fluide, lecture confortable |
 
 ```css
 /* Import dans base.css */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
 
 :root {
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body:    'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Inter', -apple-system, sans-serif;
 }
 ```
 
-**Justification :** Les deux familles partagent une construction géométrique commune qui garantit la cohérence visuelle à toutes les tailles d'écran. Space Grotesk impose une présence forte sur les grands titres ; Plus Jakarta Sans assure le confort de lecture sur de longs passages, essentiel pour les sections About, Services et Témoignages.
+**Justification :** Syne impose une présence forte sur les grands titres avec ses formes géométriques audacieuses ; Inter assure le confort de lecture sur de longs passages grâce à son dessin optimisé pour les écrans, essentiel pour les sections About, Services et Témoignages.
 
 ---
 
 ## 8. Décisions techniques
 
-### Iconographie — Font Awesome
+### Zéro JavaScript, zéro framework
 
-Les icônes sont intégrées via Font Awesome (CDN). Ce choix garantit une cohérence visuelle entre toutes les sections sans avoir à produire des SVG custom, et offre une bibliothèque complète adaptée aux thématiques tech (IA, Data, IoT).
+Le cahier des charges impose HTML5 + CSS3 uniquement. Aucun JavaScript, aucun framework CSS (pas de Bootstrap, pas de Tailwind) n'est utilisé. Toutes les interactions sont réalisées en CSS pur.
 
-### Layout — Flexbox principal, Grid en complément
+### Iconographie — SVG inline
 
-La mise en page principale repose sur **Flexbox** pour la navigation, les cards de services, les témoignages et le formulaire. CSS Grid est utilisé en complément pour les sections à grilles symétriques (chiffres clés, équipe) où l'alignement bidimensionnel est pertinent.
+Les icônes sont intégrées directement en SVG inline dans le HTML. Ce choix élimine toute dépendance externe (pas de Font Awesome, pas de CDN), garantit un contrôle total sur les couleurs via `currentColor` et `stroke`, et respecte la contrainte « aucun framework ».
 
-### Responsive — Mobile First
+### Interactions CSS — Checkbox Hack
 
-Les media queries suivent une approche **mobile first** : les styles de base ciblent les petits écrans, et les breakpoints élargissent progressivement la mise en page.
+Les interactions sans JavaScript reposent sur le **checkbox hack** :
+- **Menu hamburger mobile** : un `<input type="checkbox">` caché contrôle l'ouverture du menu latéral via le sélecteur `~`
+- **Sélecteur de langue** : un second checkbox ouvre/ferme le dropdown FR/EN
+
+### Traduction FR/EN — Deux fichiers HTML
+
+Sans JavaScript, la traduction dynamique est impossible. Le site existe en deux versions :
+- `index.html` — version française
+- `index-en.html` — version anglaise
+
+Le sélecteur de langue (globe SVG dans le header) contient des liens `<a>` qui redirigent simplement vers l'autre fichier.
+
+### Animations — CSS pur
+
+Toutes les animations sont réalisées avec `@keyframes` et les propriétés `animation` / `transition` CSS :
+- Gradient shift sur le titre hero
+- Particules flottantes (8 `<span>` animés individuellement)
+- Shimmer sweep sur les badges et CTA
+- Grille de fond en mouvement continu
+- Halo lumineux pulsant
+- Hover effects sur toutes les cartes (translateY, box-shadow, border-color)
+
+### Courbes décoratives — SVG intégré
+
+Deux courbes Bézier SVG encadrent le hero en forme d'entonnoir, partant des coins supérieurs et convergeant vers le centre. Elles utilisent `preserveAspectRatio="none"` pour s'adapter à toutes les tailles d'écran.
+
+### Layout — Flexbox + CSS Grid
+
+La mise en page combine **Flexbox** (navigation, hero, about, footer) et **CSS Grid** (services 3 colonnes, team 2 colonnes, membres 4 colonnes, stats responsive 2×2 → 1 colonne).
+
+### Responsive — Breakpoints
+
+Le design s'adapte à trois tailles d'écran avec des variables CSS qui changent selon le breakpoint :
 
 ```css
-/* Breakpoints utilises */
-/* Mobile  : 768px et moins  (defaut) */
-/* Tablette: 1024px et moins          */
-/* Desktop : plus de 1024px           */
+/* Breakpoints utilisés */
+/* Mobile  : 480px et moins  → padding réduit, colonnes simples     */
+/* Tablette: 768px et moins  → layouts en colonnes, gaps réduits     */
+/* Desktop : plus de 1024px  → layout complet multi-colonnes         */
 ```
+
+Les variables `--container-p`, `--space-3xl`, `--space-2xl`, etc. sont redéfinies dans les media queries de `base.css` pour un ajustement global cohérent.
 
 ---
 
@@ -209,6 +258,7 @@ Les media queries suivent une approche **mobile first** : les styles de base cib
 
 4. Ajouter la section dans `index.html` avec la balise sémantique appropriée (`section`, `aside`, etc.)
 5. Mettre à jour la navigation dans le `header` si nécessaire
+6. **Penser à dupliquer les changements dans `index-en.html`** avec les traductions
 
 ### Ajouter une nouvelle page (ex: services.html)
 

@@ -84,7 +84,7 @@
 .service-card:hover h3 { color: #fff; }
 
 .service-card p {
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   font-size: 0.875rem;
   line-height: 1.75;
   position: relative; z-index: 1;
@@ -109,9 +109,11 @@
   color: #fff;
 }
 
-@media (max-width: 900px) {
-  .services-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+@media (max-width: 599px) {
+  #services { padding: var(--space-2xl) 0; }
+  .services-grid { grid-template-columns: 1fr; gap: 16px; }
+  .service-card { padding: 28px 20px 24px; }
 }
-@media (min-width: 601px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 900px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
 }

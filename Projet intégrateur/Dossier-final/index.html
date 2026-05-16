@@ -15,10 +15,9 @@
   <link rel="stylesheet" href="styles/stats.css">
   <link rel="stylesheet" href="styles/team.css">
   <link rel="stylesheet" href="styles/team-membres.css">
-  <link rel="stylesheet" href="styles/temoignages.css">
+  <link rel="stylesheet" href="styles/testimonials.css">
   <link rel="stylesheet" href="styles/contact.css">
   <link rel="stylesheet" href="styles/footer.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 <body>
@@ -26,18 +25,7 @@
   <header class="header" id="header">
     <div class="header__inner container">
       <a href="#" class="header__logo" aria-label="NexaLab — Accueil">
-        <span class="header__logo-hex">
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="none" stroke="#3b77df" stroke-width="2"/>
-            <polygon points="20,8 31,14 31,26 20,32 9,26 9,14" fill="none" stroke="#3b77df" stroke-width="1.2" opacity="0.5"/>
-            <circle cx="20" cy="14" r="2" fill="#3b77df"/>
-            <circle cx="14" cy="24" r="2" fill="#3b77df"/>
-            <circle cx="26" cy="24" r="2" fill="#3b77df"/>
-            <line x1="20" y1="14" x2="14" y2="24" stroke="#3b77df" stroke-width="1" opacity="0.6"/>
-            <line x1="20" y1="14" x2="26" y2="24" stroke="#3b77df" stroke-width="1" opacity="0.6"/>
-            <line x1="14" y1="24" x2="26" y2="24" stroke="#3b77df" stroke-width="1" opacity="0.6"/>
-          </svg>
-        </span>
+        <img src="assets/images/logo.png" alt="NexaLab" class="header__logo-img">
         <span class="header__logo-text">Nexa<span>Lab</span></span>
       </a>
       <input type="checkbox" id="nav-toggle" class="nav__toggle" aria-hidden="true">
@@ -53,6 +41,27 @@
           <li><a href="#temoignages" class="nav__link">Témoignages</a></li>
           <li><a href="#contact"     class="nav__link">Contact</a></li>
         </ul>
+        <!-- Sélecteur de langue -->
+        <div class="lang-switcher">
+          <input type="checkbox" id="lang-toggle" class="lang-toggle" aria-hidden="true">
+          <label for="lang-toggle" class="lang-btn" aria-label="Changer de langue">
+            <svg class="lang-globe" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 2C12 2 8 7 8 12C8 17 12 22 12 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12 2C12 2 16 7 16 12C16 17 12 22 12 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M2 12H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M3.5 7H20.5M3.5 17H20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="lang-current">FR</span>
+            <svg class="lang-chevron" viewBox="0 0 12 12" fill="none" width="10" height="10">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </label>
+          <ul class="lang-dropdown">
+            <li><a href="index.html"    class="lang-option lang-option--active">🇫🇷 Français</a></li>
+            <li><a href="index-en.html" class="lang-option">🇬🇧 English</a></li>
+          </ul>
+        </div>
         <a href="#contact" class="nav__cta">Prendre rendez-vous</a>
       </nav>
       <label for="nav-toggle" class="nav__overlay" aria-hidden="true"></label>
@@ -63,9 +72,22 @@
 
     <!-- HERO -->
     <section class="hero" id="hero">
+      <!-- Courbes décoratives SVG -->
+      <div class="hero__curves" aria-hidden="true">
+        <svg class="hero__curves-svg" viewBox="0 0 1440 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Courbe gauche : part du coin top-left, s'incurve vers le centre -->
+          <path d="M 0,0 Q 550,300 180,700" fill="none" stroke="rgba(59,119,223,0.4)" stroke-width="2"/>
+          <!-- Courbe droite : part du coin top-right, s'incurve vers le centre -->
+          <path d="M 1440,0 Q 890,300 1260,700" fill="none" stroke="rgba(59,119,223,0.4)" stroke-width="2"/>
+        </svg>
+      </div>
+      <!-- Particules CSS animées -->
+      <div class="hero__particles">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
       <div class="hero__inner container">
         <div class="hero__content">
-          <div class="hero__badge">INNOVATION &bull; IA &bull; DATA &bull; IOT</div>
           <h1 class="hero__title">
             L'innovation technologique<br>au service de
             <span class="hero__title-highlight"> l'Afrique.</span>
@@ -74,13 +96,18 @@
             Nous accompagnons les entreprises africaines avec des solutions
             intelligentes, fiables et conçues pour un impact réel.
           </p>
+          <div class="hero__proof">
+            <div class="hero__proof-item"><strong>120+</strong> Projets livrés</div>
+            <div class="hero__proof-item"><strong>15</strong> Pays couverts</div>
+            <div class="hero__proof-item"><strong>50+</strong> Experts</div>
+          </div>
           <div class="hero__actions">
             <a href="#services" class="hero__cta">Découvrir nos services <span class="hero__cta-arrow">→</span></a>
             <a href="#contact" class="hero__cta-secondary">Nous contacter</a>
           </div>
         </div>
         <div class="hero__visual">
-          <img src="assets/hero-africa.png" alt="Carte holographique de l'Afrique — IA, Data, IoT" class="hero__image">
+          <img src="assets/images/about-team.webp" alt="Carte holographique de l'Afrique — IA, Data, IoT" class="hero__image">
         </div>
       </div>
       <div class="hero__scroll">
@@ -100,7 +127,7 @@
           <p class="about__description">Notre mission : transformer la technologie en levier concret de croissance et d'impact.</p>
         </div>
         <div class="about__visual">
-          <img src="assets/about-team.png" alt="Équipe NexaLab" class="about__image">
+          <img src="assets/images/hero-africa.jpg" alt="Équipe NexaLab" class="about__image">
         </div>
       </div>
       <div class="about__values container">
@@ -246,10 +273,10 @@
       <div class="team-wrapper">
         <div class="team-photo-header"><h2>Notre équipe</h2></div>
         <div class="team-container">
-          <figure><div class="shine"></div><img src="assets/I1.jpg" alt="Saston Cosinai"><figcaption>Saston Cosinai<br><b>Développeur</b></figcaption></figure>
-          <figure><div class="shine"></div><img src="assets/I (4).jpg" alt="Charlie Doe"><figcaption>Charlie Doe<br><b>Designer</b></figcaption></figure>
-          <figure><div class="shine"></div><img src="assets/I2.jpg" alt="John Smith"><figcaption>John Smith<br><b>Manager</b></figcaption></figure>
-          <figure><div class="shine"></div><img src="assets/I (3).jpg" alt="Diana Donoa"><figcaption>Diana Donoa<br><b>Marketing</b></figcaption></figure>
+          <figure><div class="shine"></div><img src="assets/images/member-saston.jpg" alt="Saston Cosinai"><figcaption>Saston Cosinai<br><b>Développeur</b></figcaption></figure>
+          <figure><div class="shine"></div><img src="assets/images/member-charlie.jpg" alt="Charlie Doe"><figcaption>Charlie Doe<br><b>Designer</b></figcaption></figure>
+          <figure><div class="shine"></div><img src="assets/images/member-john.jpg" alt="John Smith"><figcaption>John Smith<br><b>Manager</b></figcaption></figure>
+          <figure><div class="shine"></div><img src="assets/images/member-diana.jpg" alt="Diana Donoa"><figcaption>Diana Donoa<br><b>Marketing</b></figcaption></figure>
         </div>
       </div>
     </section>
@@ -262,23 +289,23 @@
       </div>
       <div class="temoignages-grid">
         <div class="temoignage-card">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p><i class="fas fa-quote-left quote-icon"></i>En tant que startup, nous avions besoin d'une équipe agile. Grâce à leur expertise, nous avons pu lancer notre plateforme 2 mois plus tôt que prévu. C'est un partenaire de confiance.</p>
+          <div class="stars">★★★★★</div>
+          <p><span class="quote-icon">❝</span>En tant que startup, nous avions besoin d'une équipe agile. Grâce à leur expertise, nous avons pu lancer notre plateforme 2 mois plus tôt que prévu. C'est un partenaire de confiance.</p>
           <p class="auteur">— Marie Dupont, CEO TechStart</p>
         </div>
         <div class="temoignage-card">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p><i class="fas fa-quote-left quote-icon"></i>La transition s'est faite en douceur, sans interruption de service. L'automatisation mise en place a augmenté notre productivité de 28%. Excellent travail.</p>
+          <div class="stars">★★★★★</div>
+          <p><span class="quote-icon">❝</span>La transition s'est faite en douceur, sans interruption de service. L'automatisation mise en place a augmenté notre productivité de 28%. Excellent travail.</p>
           <p class="auteur">— Thomas Lefevre, DSI LogiCorp</p>
         </div>
         <div class="temoignage-card">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p><i class="fas fa-quote-left quote-icon"></i>Une solution sur mesure, conforme RGPD, parfaitement intégrée à nos systèmes. L'équipe a fait preuve de grande rigueur et de réactivité face à nos enjeux critiques.</p>
+          <div class="stars">★★★★★</div>
+          <p><span class="quote-icon">❝</span>Une solution sur mesure, conforme RGPD, parfaitement intégrée à nos systèmes. L'équipe a fait preuve de grande rigueur et de réactivité face à nos enjeux critiques.</p>
           <p class="auteur">— Diana Benali, Responsable Sécurité</p>
         </div>
         <div class="temoignage-card">
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p><i class="fas fa-quote-left quote-icon"></i>Nos coûts opérationnels ont baissé de 35% en 6 mois. Le support est irréprochable et l'accompagnement exemplaire du début à la fin. Je recommande vivement.</p>
+          <div class="stars">★★★★★</div>
+          <p><span class="quote-icon">❝</span>Nos coûts opérationnels ont baissé de 35% en 6 mois. Le support est irréprochable et l'accompagnement exemplaire du début à la fin. Je recommande vivement.</p>
           <p class="auteur">— Julien Moreau, Directeur Opérations</p>
         </div>
       </div>
@@ -312,7 +339,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <h1>NexaLab</h1>
+        <h2>NexaLab</h2>
         <p>Laboratoire d'innovation technologique africain. IA, Data et IoT pour les entreprises du continent.</p>
       </div>
       <div class="footer-links">
@@ -342,99 +369,20 @@
         <div class="links-group">
           <h3>Réseaux</h3>
           <ul>
-            <li><a href="https://www.linkedin.com/company/nexalab" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
-            <li><a href="https://www.twitter.com/nexalab" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a></li>
-            <li><a href="https://www.facebook.com/nexalab" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+            <li><a href="https://www.linkedin.com/company/nexalab" target="_blank" rel="noopener"><svg class="social-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></li>
+            <li><a href="https://www.twitter.com/nexalab" target="_blank" rel="noopener"><svg class="social-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Twitter</a></li>
+            <li><a href="https://www.facebook.com/nexalab" target="_blank" rel="noopener"><svg class="social-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom container">
-      <p>&copy; 2025 NexaLab. Tous droits réservés.</p>
-      <p>Conçu avec ❤️ pour l'Afrique</p>
+      <p>&copy; 2026 NexaLab. Tous droits réservés.</p>
+      <p>contact@nexalab.com &middot; Conçu avec ❤️ pour l'Afrique</p>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script>
-    (function () {
-      /* ── 1. Taguer les éléments à animer ── */
-      function tag(selector, dir, delayIndexes) {
-        document.querySelectorAll(selector).forEach(function (el, i) {
-          el.classList.add('sr', 'sr-' + dir);
-          if (delayIndexes) {
-            var d = delayIndexes[i % delayIndexes.length];
-            if (d) el.classList.add('d' + d);
-          }
-        });
-      }
 
-      tag('.hero__content', 'left');
-      tag('.hero__visual',  'right');
-
-      tag('.about__text',       'left');
-      tag('.about__visual',     'right');
-      tag('.about__value-card', 'bottom', [1, 2, 3]);
-
-      tag('#services .section-label', 'bottom');
-      tag('#services .section-title', 'bottom');
-      tag('#services .section-sub',   'bottom');
-      tag('.service-card', 'bottom', [1, 2, 3]);
-
-      tag('#stats .section-label', 'bottom');
-      tag('#stats .section-title', 'bottom');
-      tag('#stats .section-sub',   'bottom');
-      tag('.stat-item', 'bottom', [1, 2, 3, 4]);
-
-      tag('#team .section-label', 'bottom');
-      tag('#team .section-title', 'bottom');
-      tag('#team .section-sub',   'bottom');
-      tag('.team-block',     'left');
-      tag('.partners-block', 'right');
-
-      tag('.team-photo-header', 'bottom');
-      tag('figure', 'bottom', [1, 2, 3, 4]);
-
-      tag('.temoignages-header', 'bottom');
-      tag('.temoignage-card', 'bottom', [1, 2, 3, 4]);
-
-      tag('.contact-info', 'left');
-      tag('.contact-form', 'right');
-
-      /* ── 2. IntersectionObserver — révèle au scroll ── */
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      document.querySelectorAll('.sr').forEach(function (el) {
-        io.observe(el);
-      });
-
-      /* ── 3. Nav active au scroll ── */
-      var sections = document.querySelectorAll('section[id]');
-      var navLinks = document.querySelectorAll('.nav__link');
-
-      window.addEventListener('scroll', function () {
-        var current = '';
-        sections.forEach(function (s) {
-          if (window.scrollY >= s.offsetTop - 120) current = s.id;
-        });
-        navLinks.forEach(function (link) {
-          link.classList.remove('nav__link--active');
-          if (link.getAttribute('href') === '#' + current)
-            link.classList.add('nav__link--active');
-        });
-      }, { passive: true });
-    })();
-  </script>
 
 </body>
 </html>
