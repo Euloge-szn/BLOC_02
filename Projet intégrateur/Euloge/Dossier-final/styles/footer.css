@@ -1,0 +1,137 @@
+/* ============================================================
+   NexaLab — footer.css  ★ AMÉLIORÉ
+   Brand large · Liens avec hover underline · Copyright bar
+   ============================================================ */
+
+.site-footer {
+  background: #080c16;
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-3xl) 0 0;
+  font-family: var(--font-body);
+  position: relative; overflow: clip;
+}
+.site-footer::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59,119,223,0.4), transparent);
+}
+
+.footer-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-p);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+/* ── Brand ── */
+.footer-brand { flex: 1.2; min-width: 220px; }
+
+.footer-brand h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 280px;
+  margin-top: 6px;
+}
+.footer-brand a { color: var(--color-text-muted); text-decoration: underline; font-size: 0.85rem; }
+.footer-brand a:hover { color: var(--color-text); }
+
+/* ── Liens ── */
+.footer-links {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.links-group h3 {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.links-group ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.links-group a {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  position: relative;
+  transition: color var(--t-fast);
+}
+.links-group a::after {
+  content: '';
+  position: absolute; bottom: -1px; left: 0;
+  width: 0; height: 1px;
+  background: var(--color-primary);
+  transition: width var(--t-base);
+}
+.links-group a:hover { color: var(--color-text); }
+.links-group a:hover::after { width: 100%; }
+.social-icon { width: 14px; height: 14px; color: var(--color-primary); flex-shrink: 0; }
+
+/* ── Copyright ── */
+.footer-bottom {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-md) var(--container-p);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: rgba(148,163,184,0.6);
+  margin: 0; line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .site-footer { padding: var(--space-2xl) 0 0; }
+  .footer-container {
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+  .footer-brand { min-width: unset; }
+  .footer-brand p { max-width: 100%; }
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg) var(--space-md);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+}
+@media (max-width: 400px) {
+  .footer-links { grid-template-columns: 1fr; }
+}

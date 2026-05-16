@@ -1,0 +1,108 @@
+/* ════════════════════════════
+   SECTION SERVICES & EXPERTISES
+   services.css
+   Dépend de : base.css (variables et animation fadeUp)
+════════════════════════════ */
+
+
+/* ── Conteneur principal de la section ── */
+#services {
+  background: var(--black);/* Fond noir profond */
+  padding: 100px 6vw; /* Espace vertical généreux + marges latérales fluides */
+  border-bottom: 1px solid var(--gray); /* Séparation subtile avec la section suivante */
+}
+
+
+/* ── Grille des cartes (Flexbox obligatoire) ── */
+.services-grid {
+  display: flex; /* Alignement horizontal des cartes */
+  gap: 24px; /* Espacement uniforme entre les cartes */
+  flex-wrap: wrap;  /* Passage en colonne sur mobile automatiquement */
+}
+
+
+/* ── Carte individuelle d'un service ── */
+.service-card {
+  flex: 1 1 280px;                /* Taille minimale 280px, s'étire pour remplir l'espace */
+  background: var(--dark2);       /* Fond légèrement plus clair que le body */
+  border: 1px solid var(--gray);  /* Bordure fine pour délimiter la carte */
+  border-radius: 16px;            /* Coins arrondis modernes */
+  padding: 36px 32px;             /* Espace interne confortable */
+  position: relative;             /* Nécessaire pour le pseudo-élément ::before (effet glow) */
+  overflow: hidden;               /* Cache le débordement du glow */
+  transition: border-color .3s, transform .3s; /* Transition fluide au survol */
+  cursor: default;
+  animation: fadeUp .5s ease both; /* Apparition depuis le bas (définie dans base.css) */
+}
+
+/* Décalage de l'animation pour un effet en cascade */
+.service-card:nth-child(1) { animation-delay: .1s; }
+.service-card:nth-child(2) { animation-delay: .2s; }
+.service-card:nth-child(3) { animation-delay: .3s; }
+
+
+/* ── Effet de lueur bleue au survol (via pseudo-élément) ── */
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* Couvre toute la carte */
+  background: radial-gradient(circle at 30% 20%, var(--glow), transparent 70%);
+  opacity: 0; /* Invisible par défaut */
+  transition: opacity .4s;
+}
+
+/* Au survol : bordure bleue + légère élévation + glow visible */
+.service-card:hover {
+  border-color: var(--blue2);
+  transform: translateY(-6px);/* Monte légèrement */
+}
+.service-card:hover::before { opacity: 1; }
+
+
+/* ── Icône SVG dans un carré bleu ── */
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--blue) 0%, #1e40af 100%); /* Dégradé bleu */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, .35); /* Halo bleu sous l'icône */
+}
+
+
+/* ── Titre du service ── */
+.service-card h3 {
+  font-family: 'Syne', sans-serif; /* Police display définie dans base.css */
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+
+/* ── Description du service ── */
+.service-card p {
+  color: var(--muted); /* Gris discret pour ne pas concurrencer le titre */
+  font-size: .9rem;
+  line-height: 1.7;
+  font-weight: 400; /* Épaisseur augmentée pour la lisibilité */
+}
+
+
+/* ── Tag de catégorie en bas de carte ── */
+.card-tag {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue3);
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  /* Pilule */
+  padding: 4px 12px;
+  opacity: .7;
+}
